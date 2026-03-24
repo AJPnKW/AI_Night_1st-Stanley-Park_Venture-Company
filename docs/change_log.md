@@ -8,3 +8,4 @@
 - added placeholder branding asset hook and favicon
 - documented architecture, IA, content, privacy, maintenance, and deployment
 - added initial QA and packaging scripts
+- established `AI_Workshop_4_ventures/web/` as the canonical editable site folder and retained `github/` as the publish mirror

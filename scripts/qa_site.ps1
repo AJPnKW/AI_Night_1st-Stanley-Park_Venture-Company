@@ -4,14 +4,14 @@
 
 [CmdletBinding()]
 param(
-  [string]$SiteFolder = "web"
+  [string]$SiteFolder = "AI_Workshop_4_ventures\\web"
 )
 
 $ErrorActionPreference = "Stop"
 
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $siteRoot = Join-Path $projectRoot $SiteFolder
-$timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
+$timestamp = Get-Date -Format "yyyyMMdd_HHmmss_fff"
 $logDir = Join-Path $projectRoot "logs\$timestamp"
 $reportDir = Join-Path $projectRoot "reports\runs\$timestamp"
 $outDir = Join-Path $projectRoot "out\$timestamp"

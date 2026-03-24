@@ -1,10 +1,10 @@
 # Solution Architecture
 
-The solution is a no-build static site rooted at `web/`, with a mirrored publishable copy in `github/`.
+The solution is a no-build static site rooted at `AI_Workshop_4_ventures/web/`, with a mirrored publishable copy in `github/`.
 
-- Shared assets live in `web/assets/`
-- Public pages live in `web/index.html`, `web/participant/`, `web/parent/`, `web/shared/`, and `web/legal/`
-- Low-profile pages live in `web/leader/` and `web/facilitator/`
+- Shared assets live in `AI_Workshop_4_ventures/web/assets/`
+- Public pages live in `AI_Workshop_4_ventures/web/index.html`, `AI_Workshop_4_ventures/web/participant/`, `AI_Workshop_4_ventures/web/parent/`, `AI_Workshop_4_ventures/web/shared/`, and `AI_Workshop_4_ventures/web/legal/`
+- Low-profile pages live in `AI_Workshop_4_ventures/web/leader/` and `AI_Workshop_4_ventures/web/facilitator/`
 - Documentation lives in `docs/`
 - Reports live in `reports/`
 - Repeatable QA scripts live in `scripts/`

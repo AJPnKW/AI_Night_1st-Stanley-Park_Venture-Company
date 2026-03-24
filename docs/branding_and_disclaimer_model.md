@@ -3,7 +3,7 @@
 The site intentionally avoids official-logo dependency and instead uses a custom visual system inspired by scarf colors.
 
 - yellow, green, and red accents provide continuity without copying official assets
-- the hero image is a replaceable placeholder file under `github/assets/images/branding-placeholder.svg`
+- the hero image is a replaceable placeholder file under `AI_Workshop_4_ventures/web/assets/images/branding-placeholder.svg`
 - the favicon is custom and non-official
 
 Disclaimer strategy:
@@ -14,4 +14,3 @@ Disclaimer strategy:
 - specific disclaimer emphasis on parent, leader, facilitator, privacy, and consent pages
 
 This keeps ownership separation visible across the full site.
-

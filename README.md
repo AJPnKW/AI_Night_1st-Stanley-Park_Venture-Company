@@ -4,11 +4,11 @@ This website is an independent volunteer support resource for one AI Coding Nigh
 
 If you are a participant or parent, start here:
 
-- Website home: `web/index.html`
-- Participant guide: `web/participant/index.html`
-- Parent / guardian guide: `web/parent/index.html`
-- Consent and approval: `web/legal/consent.html`
-- Privacy notice: `web/legal/privacy.html`
+- Repository home: <https://github.com/AJPnKW/Scouter_Jenn>
+- Participant guide: <https://github.com/AJPnKW/Scouter_Jenn/blob/main/AI_Workshop_4_ventures/web/participant/index.html>
+- Parent / guardian guide: <https://github.com/AJPnKW/Scouter_Jenn/blob/main/AI_Workshop_4_ventures/web/parent/index.html>
+- Consent and approval: <https://github.com/AJPnKW/Scouter_Jenn/blob/main/AI_Workshop_4_ventures/web/legal/consent.html>
+- Privacy notice: <https://github.com/AJPnKW/Scouter_Jenn/blob/main/AI_Workshop_4_ventures/web/legal/privacy.html>
 
 What you can expect:
 
@@ -20,7 +20,13 @@ What you can expect:
 
 This site uses standard HTML, CSS, and JavaScript so it can be maintained later without a framework.
 
+GitHub Pages status:
+
+- the GitHub repository exists
+- a public GitHub Pages site URL is not enabled yet
+- until Pages is enabled, the repository URLs above are the documented links
+
 Note:
 
-- `web/` is now the standard working site folder for reference and editing.
-- `github/` remains as the GitHub Pages publishable mirror of the same site.
+- `AI_Workshop_4_ventures/web/` is the canonical working site folder for reference and editing.
+- `github/` remains the GitHub Pages publishable mirror of the same site.

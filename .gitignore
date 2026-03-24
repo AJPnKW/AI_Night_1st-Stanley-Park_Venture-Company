@@ -4,4 +4,6 @@ reports/runs/
 *.zip
 Thumbs.db
 Desktop.ini
-AI_Workshop_4_ventures/
+AI_Workshop_4_ventures/*
+!AI_Workshop_4_ventures/web/
+!AI_Workshop_4_ventures/web/**
