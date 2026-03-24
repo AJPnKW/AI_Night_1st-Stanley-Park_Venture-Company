@@ -12,5 +12,5 @@ $outDir = Join-Path $projectRoot "out\$timestamp"
 $zipPath = Join-Path $outDir "project_package_$timestamp.zip"
 
 New-Item -ItemType Directory -Force -Path $outDir | Out-Null
-Compress-Archive -Path (Join-Path $projectRoot "docs"), (Join-Path $projectRoot "reports"), (Join-Path $projectRoot "github") -DestinationPath $zipPath -Force
+Compress-Archive -Path (Join-Path $projectRoot "docs"), (Join-Path $projectRoot "reports"), (Join-Path $projectRoot "web"), (Join-Path $projectRoot "github") -DestinationPath $zipPath -Force
 Write-Output "Package written to $zipPath"

@@ -3,12 +3,14 @@
 # Purpose: Run repeatable QA checks for the static GitHub Pages site, write timestamped logs/reports, and zip outputs.
 
 [CmdletBinding()]
-param()
+param(
+  [string]$SiteFolder = "web"
+)
 
 $ErrorActionPreference = "Stop"
 
 $projectRoot = Split-Path -Parent $PSScriptRoot
-$siteRoot = Join-Path $projectRoot "github"
+$siteRoot = Join-Path $projectRoot $SiteFolder
 $timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
 $logDir = Join-Path $projectRoot "logs\$timestamp"
 $reportDir = Join-Path $projectRoot "reports\runs\$timestamp"
@@ -47,6 +49,11 @@ function Resolve-SiteTarget {
 
 Write-Log "QA start"
 Write-Log "Project root: $projectRoot"
+Write-Log "Site root: $siteRoot"
+
+if (-not (Test-Path $siteRoot)) {
+  throw "Site root not found: $siteRoot"
+}
 
 $htmlFiles = Get-ChildItem -Path $siteRoot -Filter *.html -Recurse | Sort-Object FullName
 $missingLinks = New-Object System.Collections.Generic.List[string]
@@ -152,4 +159,3 @@ Write-Log "QA complete with status $status"
 if ($status -eq "FAIL") {
   throw "QA failed. See $reportPath"
 }
-

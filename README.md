@@ -4,11 +4,11 @@ This website is an independent volunteer support resource for one AI Coding Nigh
 
 If you are a participant or parent, start here:
 
-- Website home: `github/index.html`
-- Participant guide: `github/participant/index.html`
-- Parent / guardian guide: `github/parent/index.html`
-- Consent and approval: `github/legal/consent.html`
-- Privacy notice: `github/legal/privacy.html`
+- Website home: `web/index.html`
+- Participant guide: `web/participant/index.html`
+- Parent / guardian guide: `web/parent/index.html`
+- Consent and approval: `web/legal/consent.html`
+- Privacy notice: `web/legal/privacy.html`
 
 What you can expect:
 
@@ -18,5 +18,9 @@ What you can expect:
 - printable pages
 - a minimal-data consent approach
 
-This site uses standard HTML, CSS, and JavaScript so it can be published with GitHub Pages and maintained later without a framework.
+This site uses standard HTML, CSS, and JavaScript so it can be maintained later without a framework.
 
+Note:
+
+- `web/` is now the standard working site folder for reference and editing.
+- `github/` remains as the GitHub Pages publishable mirror of the same site.
