@@ -1,0 +1,7 @@
+logs/
+out/
+reports/runs/
+*.zip
+Thumbs.db
+Desktop.ini
+AI_Workshop_4_ventures/

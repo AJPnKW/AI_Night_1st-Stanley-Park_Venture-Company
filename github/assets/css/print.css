@@ -1,0 +1,70 @@
+@media print {
+  :root {
+    --bg: #ffffff;
+    --panel: #ffffff;
+    --panel-strong: #ffffff;
+    --ink: #111111;
+    --muted: #333333;
+    --line: #b7b7b7;
+  }
+
+  body {
+    background: #ffffff;
+    color: #111111;
+    font-size: 12pt;
+  }
+
+  .site-header,
+  .site-footer,
+  .menu-toggle,
+  .hero-actions,
+  .button-row,
+  .utility-banner {
+    display: none !important;
+  }
+
+  .page-main {
+    padding: 0;
+  }
+
+  .hero,
+  .page-grid,
+  .footer-grid,
+  .faq-grid,
+  .two-col,
+  .three-col,
+  .steps,
+  .card-grid {
+    display: block;
+  }
+
+  .hero-panel,
+  .panel,
+  .callout,
+  .tile,
+  .info-strip,
+  .stat-card,
+  .page-card {
+    box-shadow: none;
+    border: 1px solid #b7b7b7;
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+  }
+
+  .disclaimer-box,
+  .form-status {
+    border: 1px solid #999999;
+    background: #f3f3f3;
+  }
+}
+
