@@ -28,6 +28,10 @@ Relevant fields:
 - `submissionInboxLabel`
 - `submissionInboxValue`
 - `submissionInboxUrl`
+- `responseSheetLabel`
+- `responseSheetValue`
+- `responseSheetUrl`
+- `responseSheetCsvUrl`
 
 ## Current configured destination
 
@@ -42,6 +46,22 @@ using:
 Configured file:
 
 - [site-config.js](/C:/Users/andrew/PROJECTS/Scouter_Jenn/AI_Workshop_4_ventures/web/assets/js/site-config.js)
+
+## Shared response table option
+
+The repo now includes a protected submission tracker here:
+
+- [leader/submissions.html](/C:/Users/andrew/PROJECTS/Scouter_Jenn/AI_Workshop_4_ventures/web/leader/submissions.html)
+
+Recommended Google Sheet pattern:
+
+1. keep live form delivery going to the organizer inbox
+2. maintain a Google Sheet with the responses you want to track
+3. publish that sheet, or a tracking tab, as CSV
+4. place the CSV URL into `responseSheetCsvUrl`
+5. place the browser-view sheet URL into `responseSheetUrl`
+
+Once those two fields are set, the protected submission tracker page can render the shared response table directly on the site.
 
 ## One-time organizer action still required
 

@@ -7,6 +7,10 @@ window.siteConfig = Object.assign(
     submissionInboxLabel: "Submission inbox",
     submissionInboxValue: "No live submission inbox configured yet.",
     submissionInboxUrl: "",
+    responseSheetLabel: "Response table",
+    responseSheetValue: "No shared response table configured yet.",
+    responseSheetUrl: "",
+    responseSheetCsvUrl: "",
     eventDateLabel: "April 14, 2026",
     eventLocationLabel: "Hope Lutheran Pres Church, 30 Shaftsbury",
     accessPasswords: {
@@ -42,6 +46,65 @@ function withBase(path) {
   }
   const normalized = path.startsWith("/") ? path : `/${path}`;
   return `${getBasePath()}${normalized}`;
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function parseCsv(text) {
+  const rows = [];
+  let row = [];
+  let value = "";
+  let inQuotes = false;
+
+  for (let index = 0; index < text.length; index += 1) {
+    const char = text[index];
+    const next = text[index + 1];
+
+    if (char === '"') {
+      if (inQuotes && next === '"') {
+        value += '"';
+        index += 1;
+      } else {
+        inQuotes = !inQuotes;
+      }
+      continue;
+    }
+
+    if (char === "," && !inQuotes) {
+      row.push(value);
+      value = "";
+      continue;
+    }
+
+    if ((char === "\n" || char === "\r") && !inQuotes) {
+      if (char === "\r" && next === "\n") {
+        index += 1;
+      }
+      row.push(value);
+      if (row.some((cell) => cell !== "")) {
+        rows.push(row);
+      }
+      row = [];
+      value = "";
+      continue;
+    }
+
+    value += char;
+  }
+
+  row.push(value);
+  if (row.some((cell) => cell !== "")) {
+    rows.push(row);
+  }
+
+  return rows;
 }
 
 function updateSummary(form) {
@@ -305,6 +368,76 @@ function initRoleGuards() {
   window.location.href = withBase(`/access/index.html?role=${encodeURIComponent(role)}&return=${target}`);
 }
 
+async function initSubmissionDashboard() {
+  const shell = document.querySelector("[data-submissions-dashboard]");
+  if (!shell) {
+    return;
+  }
+
+  const status = shell.querySelector("[data-submissions-status]");
+  const tableTarget = shell.querySelector("[data-submissions-table]");
+
+  if (!window.siteConfig.responseSheetCsvUrl) {
+    if (status) {
+      status.textContent = "No shared response table is configured yet. Form submissions still go to the organizer email inbox.";
+    }
+    if (tableTarget) {
+      tableTarget.innerHTML = "<p class=\"small\">To show a live response table here, publish a Google Sheet as CSV and place the CSV URL in assets/js/site-config.js.</p>";
+    }
+    return;
+  }
+
+  if (status) {
+    status.textContent = "Loading response table...";
+  }
+
+  try {
+    const response = await fetch(window.siteConfig.responseSheetCsvUrl, { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const text = await response.text();
+    const rows = parseCsv(text);
+    if (!rows.length) {
+      throw new Error("No rows found");
+    }
+
+    const [headers, ...bodyRows] = rows;
+    if (!tableTarget) {
+      return;
+    }
+
+    if (!bodyRows.length) {
+      tableTarget.innerHTML = "<p class=\"small\">The response table is connected, but no submissions are visible yet.</p>";
+    } else {
+      tableTarget.innerHTML = `
+        <div class="table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>${headers.map((header) => `<th>${escapeHtml(header)}</th>`).join("")}</tr>
+            </thead>
+            <tbody>
+              ${bodyRows.map((cells) => `<tr>${headers.map((_, index) => `<td>${escapeHtml(cells[index] || "")}</td>`).join("")}</tr>`).join("")}
+            </tbody>
+          </table>
+        </div>
+      `;
+    }
+
+    if (status) {
+      status.textContent = `${bodyRows.length} submission record${bodyRows.length === 1 ? "" : "s"} loaded from the shared response table.`;
+    }
+  } catch (error) {
+    if (status) {
+      status.textContent = `The shared response table could not be loaded yet (${error.message}). Form submissions still go to the organizer inbox.`;
+    }
+    if (tableTarget) {
+      tableTarget.innerHTML = "<p class=\"small\">Check the published CSV URL in assets/js/site-config.js or keep using the organizer email inbox until the sheet is ready.</p>";
+    }
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initRoleGuards();
 
@@ -374,9 +507,28 @@ document.addEventListener("DOMContentLoaded", () => {
     initWorkflowForm(form);
   });
 
+  document.querySelectorAll("[data-response-sheet-label]").forEach((node) => {
+    node.textContent = window.siteConfig.responseSheetLabel;
+  });
+
+  document.querySelectorAll("[data-response-sheet-value]").forEach((node) => {
+    node.textContent = window.siteConfig.responseSheetValue;
+  });
+
+  document.querySelectorAll("[data-response-sheet-link]").forEach((node) => {
+    if (window.siteConfig.responseSheetUrl) {
+      node.setAttribute("href", window.siteConfig.responseSheetUrl);
+    } else {
+      node.removeAttribute("href");
+      node.setAttribute("aria-disabled", "true");
+      node.classList.add("disabled-link");
+    }
+  });
+
   document.querySelectorAll("[data-print-page]").forEach((button) => {
     button.addEventListener("click", () => window.print());
   });
 
   initAccessForms();
+  initSubmissionDashboard();
 });

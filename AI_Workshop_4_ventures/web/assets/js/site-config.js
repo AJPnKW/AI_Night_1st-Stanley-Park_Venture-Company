@@ -6,7 +6,11 @@ window.siteConfig = Object.assign(
     volunteerContactValue: "andrewjpearen@gmail.com",
     submissionInboxLabel: "Submission inbox",
     submissionInboxValue: "Completed forms are configured to send to the organizer inbox at andrewjpearen@gmail.com through FormSubmit.",
-    submissionInboxUrl: "https://formsubmit.co/documentation"
+    submissionInboxUrl: "https://formsubmit.co/documentation",
+    responseSheetLabel: "Response table",
+    responseSheetValue: "No shared response table is configured yet.",
+    responseSheetUrl: "",
+    responseSheetCsvUrl: ""
   },
   window.siteConfig || {}
 );
