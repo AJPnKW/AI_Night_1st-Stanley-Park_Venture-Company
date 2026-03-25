@@ -12,6 +12,8 @@
     background: #ffffff;
     color: #111111;
     font-size: 12pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   .site-header,
@@ -66,5 +68,51 @@
     border: 1px solid #999999;
     background: #f3f3f3;
   }
-}
 
+  .field-doc,
+  .meta-card,
+  .notes-block,
+  .sheet-band,
+  .roster-table th {
+    break-inside: avoid;
+  }
+
+  .field-doc-hero {
+    color: #111111;
+    background: #efefef;
+    border-bottom: 1px solid #b7b7b7;
+  }
+
+  .field-doc-hero h1,
+  .field-doc-hero p,
+  .field-doc-hero .lede,
+  .field-doc-hero .kicker {
+    color: #111111 !important;
+  }
+
+  .doc-pill {
+    color: #111111;
+    background: #ffffff;
+    border: 1px solid #b7b7b7;
+  }
+
+  .field-doc-body {
+    padding: 0.75rem;
+  }
+
+  .roster-table,
+  .data-table {
+    font-size: 10.5pt;
+  }
+
+  .roster-table th,
+  .roster-table td {
+    padding: 0.35rem 0.3rem;
+  }
+
+  .sheet-meta,
+  .meta-card-grid,
+  .compact-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

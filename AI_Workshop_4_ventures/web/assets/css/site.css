@@ -708,6 +708,144 @@ textarea {
   border-bottom: 1px solid rgba(8, 18, 35, 0.28);
 }
 
+.field-doc {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(247, 248, 243, 0.98) 100%);
+  border: 1px solid rgba(8, 18, 35, 0.1);
+  border-radius: 28px;
+  box-shadow: 0 22px 46px rgba(16, 27, 23, 0.12);
+  overflow: hidden;
+}
+
+.field-doc-hero {
+  padding: 1.4rem 1.5rem 1.2rem;
+  background:
+    linear-gradient(140deg, rgba(47, 122, 74, 0.95), rgba(224, 183, 41, 0.92) 62%, rgba(185, 69, 61, 0.92));
+  color: #ffffff;
+}
+
+.field-doc-hero h1,
+.field-doc-hero p,
+.field-doc-hero .small,
+.field-doc-hero .lede,
+.field-doc-hero .kicker {
+  color: #ffffff;
+}
+
+.field-doc-body {
+  padding: 1.35rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.eyebrow-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 0.8rem;
+}
+
+.doc-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.meta-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.meta-card {
+  padding: 0.9rem 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(8, 18, 35, 0.08);
+}
+
+.meta-card strong {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.section-cap {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.7rem;
+}
+
+.section-cap::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--gold), var(--green));
+  box-shadow: 0 0 0 5px rgba(47, 122, 74, 0.08);
+}
+
+.section-cap h2 {
+  margin: 0;
+}
+
+.sheet-band {
+  padding: 0.9rem 1rem;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(47, 122, 74, 0.08), rgba(224, 183, 41, 0.08));
+  border: 1px solid rgba(47, 122, 74, 0.14);
+}
+
+.sheet-band.warning {
+  background: linear-gradient(180deg, rgba(185, 69, 61, 0.1), rgba(224, 183, 41, 0.08));
+  border-color: rgba(185, 69, 61, 0.18);
+}
+
+.compact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1rem;
+}
+
+.notes-stack {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.notes-block {
+  padding: 0.9rem 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(8, 18, 35, 0.08);
+}
+
+.notes-block p {
+  margin: 0 0 0.45rem;
+}
+
+.center-check {
+  text-align: center;
+}
+
+.cell-check {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 1.5px solid rgba(8, 18, 35, 0.72);
+  border-radius: 0.15rem;
+}
+
 .pill-row {
   display: flex;
   flex-wrap: wrap;
