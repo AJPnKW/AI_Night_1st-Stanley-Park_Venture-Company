@@ -2,12 +2,14 @@
 
 Built now:
 
-- minute-by-minute outline
+- minute-by-minute or tightly bundled 90-minute execution artifact
 - prompt demo sequence
 - backup prompts
 - contingency note
 - tech checklist summary
 - neurodivergent-supportive facilitation cues
+- ahead / behind / stuck learner paths
+- facilitator-facing live-use website pages
 
 Prepared for later expansion:
 
@@ -15,4 +17,3 @@ Prepared for later expansion:
 - slide assets
 - worksheet pack
 - deeper fallback branches
-
