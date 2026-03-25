@@ -1,6 +1,6 @@
 # Scouter Jenn AI Coding Night
 
-This website is an independent volunteer support resource for one AI Coding Night with 1st Stanley Park Venturer Scouts. It is not an official Scouts Canada or group-owned website.
+This website is an independent volunteer support resource for one AI Coding Night with 45th Kitchener Group Venturer Scouts. It is not an official Scouts Canada or group-owned website.
 
 If you are a participant or parent, start here:
 
@@ -30,3 +30,4 @@ Note:
 
 - `AI_Workshop_4_ventures/web/` is the canonical working site folder for reference and editing.
 - `github/` remains the GitHub Pages publishable mirror of the same site.
+

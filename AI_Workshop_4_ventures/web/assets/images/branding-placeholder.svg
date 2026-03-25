@@ -1,19 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
-  <title id="title">Branding placeholder</title>
-  <desc id="desc">Abstract placeholder banner using yellow, green, and red stripes for later replacement.</desc>
+  <title id="title">Neutral branding placeholder</title>
+  <desc id="desc">Abstract placeholder banner using neutral charcoal, cream, and soft teal shapes for later replacement.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f8f4dd"/>
-      <stop offset="100%" stop-color="#edf3ea"/>
+      <stop offset="0%" stop-color="#f5f1e8"/>
+      <stop offset="100%" stop-color="#e7ece8"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#f4f6f5" stop-opacity="0.82"/>
     </linearGradient>
   </defs>
   <rect width="900" height="520" fill="url(#bg)"/>
-  <path d="M0 100 L900 0 L900 150 L0 250 Z" fill="#e0b729" opacity="0.88"/>
-  <path d="M0 250 L900 150 L900 290 L0 390 Z" fill="#2f7a4a" opacity="0.88"/>
-  <path d="M0 390 L900 290 L900 430 L0 520 Z" fill="#b9453d" opacity="0.88"/>
-  <rect x="90" y="100" width="390" height="220" rx="26" fill="white" fill-opacity="0.72"/>
-  <text x="125" y="180" font-family="Segoe UI, sans-serif" font-size="46" font-weight="700" fill="#1f2a24">Swap image later</text>
-  <text x="125" y="235" font-family="Segoe UI, sans-serif" font-size="26" fill="#445048">This file is a safe placeholder hook for a future scarf,</text>
-  <text x="125" y="272" font-family="Segoe UI, sans-serif" font-size="26" fill="#445048">header, or event photo replacement.</text>
+  <circle cx="145" cy="110" r="120" fill="#d8e3df" opacity="0.85"/>
+  <circle cx="800" cy="90" r="145" fill="#e8ddd0" opacity="0.78"/>
+  <path d="M0 390 C170 315 315 340 455 280 C590 225 700 175 900 205 L900 520 L0 520 Z" fill="#2d3b38" opacity="0.9"/>
+  <path d="M0 452 C185 405 315 430 470 375 C625 320 760 318 900 350 L900 520 L0 520 Z" fill="#5a7a73" opacity="0.92"/>
+  <rect x="82" y="112" width="470" height="214" rx="28" fill="url(#panel)"/>
+  <text x="118" y="182" font-family="Segoe UI, sans-serif" font-size="44" font-weight="700" fill="#24312f">Swap image later</text>
+  <text x="118" y="236" font-family="Segoe UI, sans-serif" font-size="25" fill="#465451">Neutral placeholder only.</text>
+  <text x="118" y="272" font-family="Segoe UI, sans-serif" font-size="25" fill="#465451">No scouting group colours are implied here.</text>
+  <text x="118" y="308" font-family="Segoe UI, sans-serif" font-size="25" fill="#465451">Replace with an approved 45th Kitchener image later.</text>
 </svg>
-

@@ -1,6 +1,6 @@
 # Project Overview
 
-Scouter Jenn is a static website and documentation package for a volunteer-led AI Coding Night supporting 1st Stanley Park Venturer Scouts.
+Scouter Jenn is a static website and documentation package for a volunteer-led AI Coding Night supporting 45th Kitchener Group Venturer Scouts.
 
 - Primary audience: youth participants
 - Secondary audience: parents and guardians
@@ -12,3 +12,4 @@ Scouter Jenn is a static website and documentation package for a volunteer-led A
 - Priority qualities: low cognitive load, calm structure, accessibility, printability, easy maintenance
 
 The implementation centers the participant journey while still providing practical parent privacy guidance and direct-link operational pages for volunteers.
+
