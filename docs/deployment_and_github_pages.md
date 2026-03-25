@@ -15,6 +15,7 @@ Deployment notes:
 
 Expected default live base URL if Pages is enabled without a custom domain:
 
-- `https://ajpnkw.github.io/Scouter_Jenn/`
+- `https://ajpnkw.github.io/AI_Night_45th-Kitchener_Venturers/`
 
 If the repository is later connected to Pages with a custom workflow, keep the output identical to the current static file structure.
+

@@ -4,11 +4,11 @@ This website is an independent volunteer support resource for one AI Coding Nigh
 
 If you are a participant or parent, start here:
 
-- Repository home: <https://github.com/AJPnKW/Scouter_Jenn>
-- Participant guide: <https://github.com/AJPnKW/Scouter_Jenn/blob/main/AI_Workshop_4_ventures/web/participant/index.html>
-- Parent / guardian guide: <https://github.com/AJPnKW/Scouter_Jenn/blob/main/AI_Workshop_4_ventures/web/parent/index.html>
-- Consent and approval: <https://github.com/AJPnKW/Scouter_Jenn/blob/main/AI_Workshop_4_ventures/web/legal/consent.html>
-- Privacy notice: <https://github.com/AJPnKW/Scouter_Jenn/blob/main/AI_Workshop_4_ventures/web/legal/privacy.html>
+- Repository home: <https://github.com/AJPnKW/AI_Night_45th-Kitchener_Venturers>
+- Participant guide: <https://github.com/AJPnKW/AI_Night_45th-Kitchener_Venturers/blob/main/AI_Workshop_4_ventures/web/participant/index.html>
+- Parent / guardian guide: <https://github.com/AJPnKW/AI_Night_45th-Kitchener_Venturers/blob/main/AI_Workshop_4_ventures/web/parent/index.html>
+- Consent and approval: <https://github.com/AJPnKW/AI_Night_45th-Kitchener_Venturers/blob/main/AI_Workshop_4_ventures/web/legal/consent.html>
+- Privacy notice: <https://github.com/AJPnKW/AI_Night_45th-Kitchener_Venturers/blob/main/AI_Workshop_4_ventures/web/legal/privacy.html>
 
 What you can expect:
 
@@ -30,4 +30,5 @@ Note:
 
 - `AI_Workshop_4_ventures/web/` is the canonical working site folder for reference and editing.
 - `github/` remains the GitHub Pages publishable mirror of the same site.
+
 

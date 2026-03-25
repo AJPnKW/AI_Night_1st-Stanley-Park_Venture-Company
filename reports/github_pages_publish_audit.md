@@ -39,16 +39,16 @@ Date: 2026-03-24
 
 ## Expected Public Base URL
 
-- `https://ajpnkw.github.io/Scouter_Jenn/`
+- `https://ajpnkw.github.io/AI_Night_45th-Kitchener_Venturers/`
 
 This base URL is inferred from the current repository owner and repository name, assuming no custom domain is added later.
 
 ## Public URL Map
 
-- participant: `https://ajpnkw.github.io/Scouter_Jenn/participant/`
-- parent / guardian: `https://ajpnkw.github.io/Scouter_Jenn/parent/`
-- consent: `https://ajpnkw.github.io/Scouter_Jenn/legal/consent.html`
-- privacy: `https://ajpnkw.github.io/Scouter_Jenn/legal/privacy.html`
+- participant: `https://ajpnkw.github.io/AI_Night_45th-Kitchener_Venturers/participant/`
+- parent / guardian: `https://ajpnkw.github.io/AI_Night_45th-Kitchener_Venturers/parent/`
+- consent: `https://ajpnkw.github.io/AI_Night_45th-Kitchener_Venturers/legal/consent.html`
+- privacy: `https://ajpnkw.github.io/AI_Night_45th-Kitchener_Venturers/legal/privacy.html`
 
 ## Leader / Facilitator Discovery Policy
 
@@ -69,3 +69,4 @@ This base URL is inferred from the current repository owner and repository name,
 - README policy is preserved
 - 404 file remains in the publish mirror root
 - live activation is blocked by current GitHub Pages availability for this repository
+
