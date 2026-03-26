@@ -53,8 +53,6 @@ Result: `download_missing_public_references.ps1` remains the canonical download-
 
 - `..\docs\ai_workshop_resource_system.md`
 - `..\docs\ai_workshop_parent_vs_workshop_boundary_model.md`
-- `..\docs\ai_workshop_learning_content_expansion.md`
-- `..\docs\ai_workshop_source_validation_matrix.md`
 - `..\docs\ai_workshop_codex_execution_standard.md`
 
 ### Workshop-Local Catalog Docs
@@ -76,9 +74,16 @@ Result: `download_missing_public_references.ps1` remains the canonical download-
 - `download_missing_public_references.ps1`
 - `build_workshop_resource_bundle.ps1`
 
+## Parent-Doc Reduction
+
+- `ai_workshop_learning_content_expansion.md` was merged into `..\docs\ai_workshop_resource_system.md`
+- `ai_workshop_source_validation_matrix.md` was merged into `..\docs\ai_workshop_resource_system.md`
+- the parent roll-up set was reduced from 5 files to 3
+
 ## Maintenance Outcome
 
 - fewer workshop-local markdown documents
+- fewer parent roll-up docs
 - one workshop-local master learning-plan reference
 - one workshop-local canonical download-check path
 - less chance of child-root content drift

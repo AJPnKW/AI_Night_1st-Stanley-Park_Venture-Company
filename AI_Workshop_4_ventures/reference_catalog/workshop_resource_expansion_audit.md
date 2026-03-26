@@ -39,8 +39,6 @@ It also cross-checks the parent-level roll-up docs in `..\docs` for boundary ali
 ### Parent Roll-Up Docs
 
 - `..\docs\ai_workshop_resource_system.md`
-- `..\docs\ai_workshop_learning_content_expansion.md`
-- `..\docs\ai_workshop_source_validation_matrix.md`
 - `..\docs\ai_workshop_parent_vs_workshop_boundary_model.md`
 - `..\docs\ai_workshop_codex_execution_standard.md`
 
@@ -81,7 +79,7 @@ It also cross-checks the parent-level roll-up docs in `..\docs` for boundary ali
 
 - Repeated child-workstream content was consolidated into `reference_catalog\learning_plan_expansion.md`.
 - The separate child files for activity bank, teen-safe use, Codex beginner framing, and beginner limits were removed to reduce maintenance drift.
-- Parent docs remain as short roll-up summaries rather than duplicate workshop-local teaching content.
+- Parent docs were further reduced to three maintained roll-up summaries rather than five overlapping summaries.
 
 ## Validation Summary
 
