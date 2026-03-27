@@ -2,24 +2,18 @@
 
 ## Purpose
 
-This is the workshop-local master content reference for the expanded learning system. It replaces the earlier split across separate activity, safe-use, Codex, and beginner-limits documents so the teaching model is maintained in one place.
+This is the workshop-local master content reference for the expanded learning system. It is the primary planning spine and now works together with focused companion docs in the same folder for activities, safe use, Codex, beginner limits, source inventory, and asset crosswalk.
 
-## Consolidation Note
+## Companion Docs
 
-This file is now the authoritative source for:
-
-- expanded learning-plan design
-- exercises and activity bank
-- teen-safe use and parent controls
-- beginner-safe Codex framing
-- what beginners are not told
-
-The following older child-workstream documents were consolidated into this file:
+Use this file as the master planning spine, and use these focused workshop-local companions for deeper execution detail:
 
 - `exercises_and_activity_bank.md`
 - `teen_safe_use_and_parent_controls.md`
 - `codex_beginner_segment.md`
 - `what_beginners_are_not_told.md`
+- `workshop_asset_crosswalk.md`
+- `local_source_inventory.md`
 
 ## Existing File Crosswalk
 

@@ -58,6 +58,12 @@ It also cross-checks the parent-level roll-up docs in `..\docs` for boundary ali
 - `reference_catalog\slide_candidate_matrix.csv`
 - `reference_catalog\slide_candidate_matrix.md`
 - `reference_catalog\learning_plan_expansion.md`
+- `reference_catalog\exercises_and_activity_bank.md`
+- `reference_catalog\teen_safe_use_and_parent_controls.md`
+- `reference_catalog\codex_beginner_segment.md`
+- `reference_catalog\what_beginners_are_not_told.md`
+- `reference_catalog\workshop_asset_crosswalk.md`
+- `reference_catalog\local_source_inventory.md`
 - `reference_catalog\workshop_resource_expansion_audit.md`
 
 ## Boundary Drift Corrected
@@ -77,8 +83,8 @@ It also cross-checks the parent-level roll-up docs in `..\docs` for boundary ali
 
 ## Duplication Reduced
 
-- Repeated child-workstream content was consolidated into `reference_catalog\learning_plan_expansion.md`.
-- The separate child files for activity bank, teen-safe use, Codex beginner framing, and beginner limits were removed to reduce maintenance drift.
+- `reference_catalog\learning_plan_expansion.md` remains the master planning spine.
+- Focused companion docs were restored under the child root for activities, safe use, Codex, beginner limits, source inventory, and asset crosswalk so the requested output set exists without moving detail into parent docs.
 - Parent docs were further reduced to three maintained roll-up summaries rather than five overlapping summaries.
 
 ## Validation Summary

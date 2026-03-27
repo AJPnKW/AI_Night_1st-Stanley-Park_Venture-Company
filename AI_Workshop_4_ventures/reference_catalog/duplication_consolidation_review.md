@@ -26,14 +26,14 @@ Result: kept all three, but left them concise instead of expanding them further.
 
 ### Workshop-Local Docs
 
-The following files substantially overlapped with `learning_plan_expansion.md`:
+The following files overlap with `learning_plan_expansion.md`, but are now intentionally kept as focused companion docs rather than separate competing master docs:
 
 - `exercises_and_activity_bank.md`
 - `teen_safe_use_and_parent_controls.md`
 - `codex_beginner_segment.md`
 - `what_beginners_are_not_told.md`
 
-Result: consolidated into `learning_plan_expansion.md` and removed as standalone workshop-local files.
+Result: `learning_plan_expansion.md` remains the master planning spine, and these files remain as narrower companion references with distinct maintenance roles.
 
 ### Scripts
 
@@ -59,11 +59,17 @@ Result: `download_missing_public_references.ps1` remains the canonical download-
 
 - `detailed_resource_inventory.csv`
 - `detailed_resource_inventory.md`
+- `local_source_inventory.md`
 - `source_claim_validation.csv`
 - `source_claim_validation.md`
 - `slide_candidate_matrix.csv`
 - `slide_candidate_matrix.md`
 - `learning_plan_expansion.md`
+- `exercises_and_activity_bank.md`
+- `teen_safe_use_and_parent_controls.md`
+- `codex_beginner_segment.md`
+- `what_beginners_are_not_told.md`
+- `workshop_asset_crosswalk.md`
 - `workshop_resource_expansion_audit.md`
 - `duplication_consolidation_review.md`
 
@@ -82,8 +88,8 @@ Result: `download_missing_public_references.ps1` remains the canonical download-
 
 ## Maintenance Outcome
 
-- fewer workshop-local markdown documents
+- fewer competing workshop-local master documents
 - fewer parent roll-up docs
-- one workshop-local master learning-plan reference
+- one workshop-local master learning-plan reference plus focused companion docs
 - one workshop-local canonical download-check path
 - less chance of child-root content drift
