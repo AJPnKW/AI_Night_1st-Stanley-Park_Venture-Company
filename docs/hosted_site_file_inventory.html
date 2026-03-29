@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hosted Site File Inventory</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --ink: #1f2937;
+      --muted: #526072;
+      --line: #d7deea;
+      --accent: #1d4ed8;
+      --accent-soft: #e8f0ff;
+      --good: #0f766e;
+      --shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(29, 78, 216, 0.08), transparent 28%),
+        linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+    }
+
+    .wrap {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 32px 24px 56px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #15387a 0%, #1d4ed8 55%, #3b82f6 100%);
+      color: #fff;
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: 2.2rem;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 900px;
+      line-height: 1.6;
+      font-size: 1.02rem;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      font-size: 0.92rem;
+    }
+
+    .section {
+      margin-top: 24px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      padding: 20px 24px;
+      background: linear-gradient(180deg, #fdfefe 0%, #f3f7ff 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-header h2 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    .section-header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+      line-height: 1.5;
+    }
+
+    th {
+      background: var(--accent-soft);
+      color: #16315f;
+      font-size: 0.93rem;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.92em;
+      background: #f3f6fb;
+      border: 1px solid #dfe7f3;
+      border-radius: 8px;
+      padding: 2px 6px;
+      color: #16315f;
+      word-break: break-word;
+    }
+
+    .scope {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #eef7f6;
+      color: var(--good);
+      border: 1px solid #cde9e5;
+      font-size: 0.86rem;
+      white-space: nowrap;
+    }
+
+    .note {
+      margin-top: 24px;
+      background: #fffdf5;
+      border: 1px solid #f0df9c;
+      border-left: 6px solid #d4a017;
+      border-radius: 20px;
+      padding: 18px 20px;
+      line-height: 1.6;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      th, td {
+        padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Hosted Site File Inventory</h1>
+      <p>This document maps the current GitHub-hosted workshop site files in <code>C:\Users\andrew\PROJECTS\Scouter_Jenn\github</code>. It is a repo-side reference document, not part of the public event website.</p>
+      <div class="meta">
+        <span class="chip">Hosted base URL: <code>https://ajpnkw.github.io/AI_Night_1st-Stanley-Park_Venture-Company/</code></span>
+        <span class="chip">Group: 1st Stanley Park Venture Company</span>
+        <span class="chip">Scope: publishable static site</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2>Core System</h2>
+          <p>Top-level files required for hosting, entry, and recovery.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>What It Is</th>
+              <th>What It Contains</th>
+              <th>Scope</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>.nojekyll</code></td><td>GitHub Pages config file</td><td>Disables Jekyll processing</td><td><span class="scope">system</span></td><td>Lets the static site publish exactly as stored</td></tr>
+            <tr><td><code>index.html</code></td><td>Main landing page</td><td>Home entry page, event overview, and main actions</td><td><span class="scope">public</span></td><td>Front door for the workshop system</td></tr>
+            <tr><td><code>404.html</code></td><td>Error page</td><td>Fallback navigation for missing or stale URLs</td><td><span class="scope">public</span></td><td>Recovery path when a visitor hits a bad link</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2>Assets</h2>
+          <p>Shared visual, configuration, and behavior files used across the site.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>What It Is</th>
+              <th>What It Contains</th>
+              <th>Scope</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>assets/css/site.css</code></td><td>Main stylesheet</td><td>Layout, cards, forms, buttons, spacing, and common visual system</td><td><span class="scope">system</span></td><td>Applies the shared design template</td></tr>
+            <tr><td><code>assets/css/print.css</code></td><td>Print stylesheet</td><td>Print cleanup and printable form/page behavior</td><td><span class="scope">system</span></td><td>Makes pages readable on paper or PDF</td></tr>
+            <tr><td><code>assets/js/site.js</code></td><td>Main JavaScript file</td><td>Menus, role gating, form helpers, save/download/print support</td><td><span class="scope">system</span></td><td>Shared interactive behavior across the site</td></tr>
+            <tr><td><code>assets/js/site-config.js</code></td><td>Configuration file</td><td>Submission destination and tracking settings</td><td><span class="scope">internal/system</span></td><td>Central config for forms and submission handling</td></tr>
+            <tr><td><code>assets/icons/favicon.svg</code></td><td>Favicon</td><td>Browser tab icon</td><td><span class="scope">public/system</span></td><td>Site identity marker in tabs and bookmarks</td></tr>
+            <tr><td><code>assets/images/branding-placeholder.svg</code></td><td>Placeholder banner image</td><td>Neutral branding hook for future approved imagery</td><td><span class="scope">public/system</span></td><td>Temporary visual placeholder pending final banner asset</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2>Role Access</h2>
+          <p>Low-profile entry point for role-specific pages.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>What It Is</th>
+              <th>What It Contains</th>
+              <th>Scope</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>access/index.html</code></td><td>Role access page</td><td>Venturer, leader, and facilitator access gates</td><td><span class="scope">low-profile/internal</span></td><td>Entry point for role-specific parts of the system</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2>Participant Area</h2>
+          <p>Participant-facing journey from preparation through follow-up.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>What It Is</th>
+              <th>What It Contains</th>
+              <th>Scope</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>participant/index.html</code></td><td>Participant landing</td><td>Overview of the participant journey and key links</td><td><span class="scope">public</span></td><td>Participant start page</td></tr>
+            <tr><td><code>participant/signup.html</code></td><td>Participant sign-up form</td><td>Participant registration and readiness fields</td><td><span class="scope">public</span></td><td>Collect participant sign-up details</td></tr>
+            <tr><td><code>participant/readiness.html</code></td><td>Readiness page</td><td>Preparation and readiness guidance</td><td><span class="scope">public</span></td><td>Help participants get ready before the event</td></tr>
+            <tr><td><code>participant/before.html</code></td><td>Pre-work page</td><td>Pre-flight checklist and before-event tasks</td><td><span class="scope">public</span></td><td>Preparation before arrival</td></tr>
+            <tr><td><code>participant/day-of.html</code></td><td>Day-of page</td><td>What to expect and what to do on the event day</td><td><span class="scope">public</span></td><td>Reduce uncertainty on the night</td></tr>
+            <tr><td><code>participant/project.html</code></td><td>Project page</td><td>Project-building guidance and project pathways</td><td><span class="scope">public</span></td><td>Support the hands-on build portion</td></tr>
+            <tr><td><code>participant/after.html</code></td><td>Follow-up page</td><td>Post-session wrap-up and next-step guidance</td><td><span class="scope">public</span></td><td>Support after the event</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2>Parent / Guardian Area</h2>
+          <p>Family-facing information and approval path.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>What It Is</th>
+              <th>What It Contains</th>
+              <th>Scope</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>parent/index.html</code></td><td>Parent guide</td><td>Parent overview, setup, supervision, and safety framing</td><td><span class="scope">public</span></td><td>Primary parent/guardian information page</td></tr>
+            <tr><td><code>parent/waiver.html</code></td><td>Waiver/approval form</td><td>Parent acknowledgement and approval submission</td><td><span class="scope">public</span></td><td>Collect parent permission</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2>Leader Area</h2>
+          <p>Low-profile operational support pages for leaders and scouters.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>What It Is</th>
+              <th>What It Contains</th>
+              <th>Scope</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>leader/index.html</code></td><td>Leader page</td><td>Room readiness, participant support, and supervision cues</td><td><span class="scope">low-profile/internal</span></td><td>Leader operational guidance</td></tr>
+            <tr><td><code>leader/submissions.html</code></td><td>Submission tracker</td><td>Organizer or leader view of completed form flow</td><td><span class="scope">internal</span></td><td>Review sign-up and waiver completion</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2>Facilitator Area</h2>
+          <p>Low-profile live delivery support for the workshop facilitator.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>What It Is</th>
+              <th>What It Contains</th>
+              <th>Scope</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>facilitator/index.html</code></td><td>Facilitator page</td><td>Facilitator overview, notes, prompts, and support links</td><td><span class="scope">low-profile/internal</span></td><td>Main facilitator control page</td></tr>
+            <tr><td><code>facilitator/run-of-show.html</code></td><td>Run-of-show page</td><td>90-minute execution sequence</td><td><span class="scope">internal</span></td><td>Live workshop delivery guide</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2>Legal</h2>
+          <p>Public-facing legal, consent, and ownership-boundary pages.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>What It Is</th>
+              <th>What It Contains</th>
+              <th>Scope</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>legal/privacy.html</code></td><td>Privacy page</td><td>Privacy notice and data-minimization explanation</td><td><span class="scope">public</span></td><td>Explain data handling and retention approach</td></tr>
+            <tr><td><code>legal/consent.html</code></td><td>Consent page</td><td>Consent and approval explanation</td><td><span class="scope">public</span></td><td>Explain the workshop consent model</td></tr>
+            <tr><td><code>legal/disclaimer.html</code></td><td>Disclaimer page</td><td>Independent/unofficial site disclaimer</td><td><span class="scope">public</span></td><td>Clarify ownership boundaries and unofficial status</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <h2>Shared Resources</h2>
+          <p>Common resource, help, and printable support pages.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>File</th>
+              <th>What It Is</th>
+              <th>What It Contains</th>
+              <th>Scope</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><code>shared/resources.html</code></td><td>Resource hub</td><td>Index of useful shared pages and printable tools</td><td><span class="scope">public/shared</span></td><td>Shared resource starting point</td></tr>
+            <tr><td><code>shared/faq.html</code></td><td>FAQ page</td><td>Common questions and answers</td><td><span class="scope">public/shared</span></td><td>Reduce repeated questions</td></tr>
+            <tr><td><code>shared/examples.html</code></td><td>Examples page</td><td>Example prompts and practical use examples</td><td><span class="scope">public/shared</span></td><td>Show reusable examples</td></tr>
+            <tr><td><code>shared/terms.html</code></td><td>Glossary page</td><td>Simple AI and ChatGPT term definitions</td><td><span class="scope">public/shared</span></td><td>Plain-language terminology help</td></tr>
+            <tr><td><code>shared/submission-received.html</code></td><td>Confirmation page</td><td>Form-submission confirmation message</td><td><span class="scope">public/shared</span></td><td>Post-submit landing page</td></tr>
+            <tr><td><code>shared/site-inspection-sheet.html</code></td><td>Printable inspection sheet</td><td>Venue, Wi-Fi, and on-site check form</td><td><span class="scope">internal/shared</span></td><td>Print-and-use field inspection sheet</td></tr>
+            <tr><td><code>shared/participant-roster-sheet.html</code></td><td>Printable roster sheet</td><td>Participant list sheet with age-group check columns</td><td><span class="scope">internal/shared</span></td><td>Print-and-use roster or sign-in sheet</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="note">
+      <strong>Note:</strong> this inventory is for the publishable site only. It does not include the workshop-root research cache, scripts, workshop pack, or parent-level governance docs. Those are repo-support artifacts, not GitHub Pages site files.
+    </div>
+    <p class="small">File location: <code>C:\Users\andrew\PROJECTS\Scouter_Jenn\docs\hosted_site_file_inventory.html</code></p>
+  </div>
+</body>
+</html>
