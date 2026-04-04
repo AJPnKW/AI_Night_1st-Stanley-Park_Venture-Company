@@ -1,115 +1,22 @@
 <!doctype html>
-<html lang="en">
+<html lang='en'>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Parent Waiver | AI Night</title>
-  <meta name="description" content="Parent or guardian approval workflow for AI Night, including age-based approval guidance and printable waiver output.">
-  <link rel="icon" href="/AI_Night_1st-Stanley-Park_Venture-Company/assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/AI_Night_1st-Stanley-Park_Venture-Company/assets/css/site.css">
-  <link rel="stylesheet" href="/AI_Night_1st-Stanley-Park_Venture-Company/assets/css/print.css">
-  <script src="/AI_Night_1st-Stanley-Park_Venture-Company/assets/js/site-config.js"></script>
-  <script defer src="/AI_Night_1st-Stanley-Park_Venture-Company/assets/js/site.js"></script>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Parent Waiver</title>
+  <meta name='description' content='Parent Waiver'>
+  <link rel='icon' href='/AI_Night_1st-Stanley-Park_Venture-Company/assets/icons/favicon.svg' type='image/svg+xml'>
+  <link rel='stylesheet' href='/AI_Night_1st-Stanley-Park_Venture-Company/assets/css/site.css'>
+  <link rel='stylesheet' href='/AI_Night_1st-Stanley-Park_Venture-Company/assets/css/print.css'>
+  <script defer src='/AI_Night_1st-Stanley-Park_Venture-Company/assets/js/site.js'></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-  <div class="utility-banner"><div class="wrap"><strong>Independent volunteer resource:</strong> parent or guardian approval workflow for one supervised AI Night.</div></div>
-  <header class="site-header"><div class="wrap header-row"><a class="brand" href="/AI_Night_1st-Stanley-Park_Venture-Company/index.html"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text"><strong>AI Night</strong><span>Parent waiver</span></span></a><button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="main-nav">Menu</button><nav class="main-nav" id="main-nav" data-nav aria-label="Primary"><ul><li><a data-current-path href="/AI_Night_1st-Stanley-Park_Venture-Company/index.html">Home</a></li><li><a data-current-path href="/AI_Night_1st-Stanley-Park_Venture-Company/participant/signup.html">Sign-up</a></li><li><a data-current-path href="/AI_Night_1st-Stanley-Park_Venture-Company/participant/before.html">Pre-flight</a></li><li><a data-current-path href="/AI_Night_1st-Stanley-Park_Venture-Company/parent/waiver.html">Parent waiver</a></li><li><a data-current-path href="/AI_Night_1st-Stanley-Park_Venture-Company/legal/privacy.html">Privacy</a></li></ul></nav></div></header>
-  <main id="main" class="page-main"><div class="wrap">
-    <section class="hero">
-      <div class="hero-panel">
-        <span class="eyebrow">Step 2 of 3</span>
-        <h1>Parent or guardian approval workflow.</h1>
-        <p class="lede">This page is the actual approval path for the event. It explains what the participant will be doing, confirms safe AI-use expectations, and records approval in a format that can be submitted to the organizer inbox or saved as a PDF copy.</p>
-        <div class="disclaimer-box"><strong>Age rule:</strong> use the participant's age on <strong>April 14, 2026</strong>. Birthdate is not requested.</div>
-      </div>
-      <div class="panel">
-        <h2>Before completing the waiver</h2>
-        <ul class="list-clean">
-          <li>Review the participant sign-up and pre-flight pages.</li>
-          <li>Review the privacy page.</li>
-          <li>Confirm the participant understands that AI responses can be wrong.</li>
-          <li>Confirm the participant should not enter personal or sensitive information into ChatGPT.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="summary-grid">
-      <div class="page-card">
-        <p class="kicker">Approval workflow</p>
-        <h2>Parent or guardian waiver</h2>
-        <div class="form-shell">
-          <div class="form-status" data-form-status></div>
-          <form id="parent-waiver-form" data-form-endpoint data-workflow-form data-draft-key="parent_waiver" data-summary-target="#parent-waiver-summary" data-age-notice-target="#waiver-age-note" data-save-button="#waiver-save-draft" data-download-button="#waiver-download" data-print-button="#waiver-print" data-clear-button="#waiver-clear" data-download-name="parent-waiver">
-            <input type="hidden" name="workflow_name" value="parent_waiver">
-            <input type="hidden" name="event_name" value="AI Night - 1st Stanley Park Venture Company">
-            <input type="hidden" name="event_date" value="April 14, 2026">
-            <input type="hidden" name="event_location" value="Hope Lutheran Pres Church, 30 Shaftsbury">
-            <input type="hidden" name="_subject" value="AI Night parent waiver">
-            <input type="hidden" name="_next" value="https://ajpnkw.github.io/AI_Night_1st-Stanley-Park_Venture-Company/shared/submission-received.html">
-            <input type="hidden" name="_captcha" value="false">
-            <div class="two-col">
-              <div><label for="participant_first_name">Participant first name</label><input id="participant_first_name" name="participant_first_name" autocomplete="given-name" required></div>
-              <div><label for="participant_age">Participant age on April 14, 2026</label><input id="participant_age" name="participant_age" inputmode="numeric" data-age-on-event required></div>
-            </div>
-            <div id="waiver-age-note" class="note-card"><p>Enter age on April 14, 2026. Parent or guardian approval is generally expected for youth participants.</p></div>
-            <div class="two-col">
-              <div><label for="parent_guardian_name">Parent / guardian name</label><input id="parent_guardian_name" name="parent_guardian_name" autocomplete="name" required></div>
-              <div><label for="relationship_to_participant">Relationship to participant</label><input id="relationship_to_participant" name="relationship_to_participant" required></div>
-            </div>
-            <div class="two-col">
-              <div><label for="parent_email">Parent / guardian email (optional)</label><input id="parent_email" name="parent_email" type="email"></div>
-              <div><label for="follow_up_needed">Follow-up needed?</label><select id="follow_up_needed" name="follow_up_needed" required><option value="">Choose one</option><option>No, this approval is complete</option><option>Yes, I need a follow-up conversation</option></select></div>
-            </div>
-            <fieldset class="page-card">
-              <legend><strong>Approval and AI-use acknowledgement</strong></legend>
-              <div><label for="approval_status">Approval status</label><select id="approval_status" name="approval_status" required><option value="">Choose one</option><option>I approve participation in this workshop</option><option>I need follow-up before deciding</option></select></div>
-              <div><label for="ack_supervised">I understand this is a supervised AI / ChatGPT workshop.</label><select id="ack_supervised" name="ack_supervised" required><option value="">Choose one</option><option>I understand and agree</option><option>I need this explained again</option></select></div>
-              <div><label for="ack_privacy">I understand participants should not enter personal or sensitive information into AI tools.</label><select id="ack_privacy" name="ack_privacy" required><option value="">Choose one</option><option>I understand and agree</option><option>I need this explained again</option></select></div>
-              <div><label for="ack_ai_limits">I understand AI can be useful and still produce incorrect answers.</label><select id="ack_ai_limits" name="ack_ai_limits" required><option value="">Choose one</option><option>I understand and agree</option><option>I need this explained again</option></select></div>
-            </fieldset>
-            <div><label for="notes">Notes for the organizer or leaders (optional)</label><textarea id="notes" name="notes"></textarea></div>
-            <div class="form-toolbar">
-              <button class="button" type="submit">Save parent waiver</button>
-              <button class="button-soft" id="waiver-save-draft" type="button">Save draft on this device</button>
-              <button class="button-soft" id="waiver-download" type="button">Download entered details</button>
-              <button class="button-soft" id="waiver-print" type="button">Print / Save as PDF</button>
-              <button class="button-soft" id="waiver-clear" type="button">Clear form</button>
-            </div>
-          </form>
-          <p class="field-note"><span data-contact-label></span>: <span data-contact-value></span></p>
-          <p class="field-note"><span data-submission-inbox-label></span>: <span data-submission-inbox-value></span></p>
-          <p class="field-note">Organizer note: the first FormSubmit use may send a one-time activation email that must be confirmed before normal delivery starts.</p>
-        </div>
-      </div>
-      <aside class="summary-sheet" id="parent-waiver-summary">
-        <p class="small">Your entered details will appear here so you can print or save them.</p>
-      </aside>
-    </section>
-
-    <section class="two-col" style="margin-top:1rem;">
-      <div class="page-card">
-        <h2>What this does not ask for</h2>
-        <ul class="list-clean">
-          <li>No birthdate</li>
-          <li>No home address</li>
-          <li>No password</li>
-          <li>No unrelated personal details</li>
-          <li>No information beyond what is needed for approval and workshop readiness</li>
-        </ul>
-      </div>
-      <div class="page-card">
-        <h2>Related pages</h2>
-        <div class="button-row">
-          <a class="button" href="/AI_Night_1st-Stanley-Park_Venture-Company/participant/signup.html">Participant sign-up</a>
-          <a class="button-ghost" href="/AI_Night_1st-Stanley-Park_Venture-Company/participant/before.html">Pre-flight checklist</a>
-          <a class="button-ghost" href="/AI_Night_1st-Stanley-Park_Venture-Company/legal/privacy.html">Privacy page</a>
-        </div>
-      </div>
-    </section>
-  </div></main>
-  <footer class="site-footer"><div class="wrap footer-grid"><div><p>Independent volunteer approval page for one event. Not an official group or Scouts Canada website.</p></div><nav class="footer-nav"><ul><li><a href="/AI_Night_1st-Stanley-Park_Venture-Company/parent/index.html">Parent guide</a></li><li><a href="/AI_Night_1st-Stanley-Park_Venture-Company/legal/privacy.html">Privacy</a></li><li><a href="/AI_Night_1st-Stanley-Park_Venture-Company/participant/signup.html">Participant sign-up</a></li></ul></nav></div></footer>
+  <a class='skip-link' href='#main'>Skip to main content</a>
+  <div class='site-shell'>
+    <div class='utility-banner'><div class='wrap'><strong>Browser-first by default:</strong> the core session works in the browser. Local VM and advanced tooling are optional only.</div></div>
+    <header class='site-header'><div class='wrap header-row'><a class='brand' href='/AI_Night_1st-Stanley-Park_Venture-Company/index.html'><span class='brand-mark' aria-hidden='true'></span><span class='brand-text'><strong>AI Night</strong><span>Support page</span></span></a><button class='menu-toggle' data-menu-toggle aria-expanded='false' aria-controls='main-nav'>Menu</button><nav class='main-nav' id='main-nav' data-nav aria-label='Primary'><ul><li><a data-current-path href='/AI_Night_1st-Stanley-Park_Venture-Company/index.html'>Home</a></li><li><a data-current-path href='/AI_Night_1st-Stanley-Park_Venture-Company/participant/index.html'>Youth</a></li><li><a data-current-path href='/AI_Night_1st-Stanley-Park_Venture-Company/parent/index.html'>Parents</a></li><li><a data-current-path href='/AI_Night_1st-Stanley-Park_Venture-Company/leader/index.html'>Leaders</a></li><li><a data-current-path href='/AI_Night_1st-Stanley-Park_Venture-Company/facilitator/index.html'>Facilitator</a></li><li><a data-current-path href='/AI_Night_1st-Stanley-Park_Venture-Company/participant/exercises.html'>Exercises</a></li><li><a data-current-path href='/AI_Night_1st-Stanley-Park_Venture-Company/kb/index.html'>KB</a></li><li><a data-current-path href='/AI_Night_1st-Stanley-Park_Venture-Company/shared/faq.html'>FAQ</a></li></ul></nav></div></header>
+    <main id='main' class='page-main'><div class='wrap'><section class='panel'><h1>Parent Waiver</h1><p>Parent Waiver</p></section><section class='panel'><h2>Parent Waiver</h2><p>This supporting page is retained and aligned to the browser-first delivery model.</p></section></div></main>
+    <footer class='site-footer'><div class='wrap footer-grid'><div><h2>AI Night</h2><p>Guided browser-based introduction to AI for Scouts and Venturers. The main outcomes are safer use, clearer prompts, reflection, and practical confidence.</p></div><nav class='footer-nav' aria-label='Footer'><ul><li><a href='/AI_Night_1st-Stanley-Park_Venture-Company/participant/before.html'>Before</a></li><li><a href='/AI_Night_1st-Stanley-Park_Venture-Company/participant/day-of.html'>During</a></li><li><a href='/AI_Night_1st-Stanley-Park_Venture-Company/participant/after.html'>After</a></li><li><a href='/AI_Night_1st-Stanley-Park_Venture-Company/participant/exercises.html'>Exercises</a></li><li><a href='/AI_Night_1st-Stanley-Park_Venture-Company/participant/reflections.html'>Reflections</a></li><li><a href='/AI_Night_1st-Stanley-Park_Venture-Company/kb/index.html'>Knowledge articles</a></li></ul></nav></div></footer>
+  </div>
 </body>
 </html>
-
-

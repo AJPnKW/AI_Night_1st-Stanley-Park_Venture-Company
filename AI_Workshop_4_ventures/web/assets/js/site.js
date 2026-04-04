@@ -18,7 +18,7 @@ window.siteConfig = Object.assign(
       leader: "lEader",
       facilitator: "J@Hn"
     },
-    formStoragePrefix: "ai_night_45th_"
+    formStoragePrefix: "browser_first_ai_night_"
   },
   window.siteConfig || {}
 );
