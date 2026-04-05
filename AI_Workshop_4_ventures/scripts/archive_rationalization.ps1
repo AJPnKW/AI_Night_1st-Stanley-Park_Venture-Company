@@ -55,7 +55,10 @@ $explicitTargets = @(
   @{ source = (Join-Path $ProjectRoot ".downlaoded_ai_packages"); name = "legacy_typo_downloaded_ai_packages" },
   @{ source = (Join-Path $ProjectRoot "reference_catalog"); name = "legacy_reference_catalog" },
   @{ source = (Join-Path $ProjectRoot "VM_Setup\scripts\__pycache__"); name = "legacy_vm_pycache" },
-  @{ source = (Join-Path $ProjectRoot "scripts\fix_leading_numbers.bak"); name = "legacy_fix_leading_numbers.bak" }
+  @{ source = (Join-Path $ProjectRoot "scripts\fix_leading_numbers.bak"); name = "legacy_fix_leading_numbers.bak" },
+  @{ source = (Join-Path $ProjectRoot "README.txt"); name = "legacy_project_readme_txt" },
+  @{ source = (Join-Path $ProjectRoot "start_here.html"); name = "legacy_start_here_html" },
+  @{ source = (Join-Path $ProjectRoot "start_here.zip"); name = "legacy_start_here_zip" }
 )
 
 foreach ($target in $explicitTargets) {

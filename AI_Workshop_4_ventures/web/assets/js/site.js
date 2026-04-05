@@ -1,33 +1,27 @@
 window.siteConfig = Object.assign(
   {
     formEndpoint: "",
-    formServiceName: "Formspree-compatible endpoint",
+    formServiceName: "Local workbook only",
+    surveyPlatformName: "Google Forms",
+    preEventSurveyUrl: "",
+    feedbackSurveyUrl: "",
+    surveyStatusLabel: "Survey status",
+    surveyStatusValue: "Organizer-owned Google Forms are the canonical survey path. Public URLs are not stored in this repository.",
     volunteerContactLabel: "Volunteer organizer contact",
-    volunteerContactValue: "Configure in assets/js/site-config.js before publishing live approvals.",
-    submissionInboxLabel: "Submission inbox",
-    submissionInboxValue: "No live submission inbox configured yet.",
+    volunteerContactValue: "Use the event communication channel shared by your unit leaders or presenter.",
+    submissionInboxLabel: "Workbook storage",
+    submissionInboxValue: "Participant workbook notes stay in this browser unless the learner chooses to print or download them.",
     submissionInboxUrl: "",
-    responseSheetLabel: "Response table",
-    responseSheetValue: "No shared response table configured yet.",
+    responseSheetLabel: "Form response handling",
+    responseSheetValue: "Canonical form handling is Google Forms to Google Sheets. Live organizer-owned form links are managed outside the public repo.",
     responseSheetUrl: "",
     responseSheetCsvUrl: "",
     eventDateLabel: "April 14, 2026",
     eventLocationLabel: "Hope Lutheran Pres Church, 30 Shaftsbury",
-    accessPasswords: {
-      participant: "ScouterJenn",
-      leader: "lEader",
-      facilitator: "J@Hn"
-    },
     formStoragePrefix: "browser_first_ai_night_"
   },
   window.siteConfig || {}
 );
-
-const ROLE_ROUTES = {
-  participant: "/participant/index.html",
-  leader: "/leader/index.html",
-  facilitator: "/facilitator/index.html"
-};
 
 function getBasePath() {
   const repoPath = "/AI_Night_1st-Stanley-Park_Venture-Company";
@@ -266,22 +260,16 @@ function initWorkflowForm(form) {
 
   form.addEventListener("submit", (event) => {
     const status = form.closest(".form-shell")?.querySelector("[data-form-status]");
-    if (!window.siteConfig.formEndpoint) {
-      event.preventDefault();
-      saveDraft(form);
-      updateSummary(form);
-      if (status) {
-        status.textContent = "No live submission inbox is configured yet. Your draft is saved only on this device. Use Print / Save as PDF or Download entered details if the organizer still needs a copy.";
-      }
-      return;
-    }
-
+    event.preventDefault();
+    saveDraft(form);
+    updateSummary(form);
     if (status) {
-      status.textContent = `Submitting now. Your answers will be sent to the organizer through ${window.siteConfig.formServiceName}.`;
+      status.textContent = "This workbook stays on this device. Use Save in this browser, Download report, or Print / Save as PDF. Pre-event and feedback collection are handled separately through organizer-issued Google Forms.";
     }
   });
 
-  const saveButton = document.querySelector(form.dataset.saveButton || "");
+  const saveSelector = form.dataset.saveButton;
+  const saveButton = form.querySelector("[data-save-draft]") || (saveSelector ? document.querySelector(saveSelector) : null);
   if (saveButton) {
     saveButton.addEventListener("click", () => {
       saveDraft(form);
@@ -292,7 +280,8 @@ function initWorkflowForm(form) {
     });
   }
 
-  const downloadButton = document.querySelector(form.dataset.downloadButton || "");
+  const downloadSelector = form.dataset.downloadButton;
+  const downloadButton = form.querySelector("[data-download-draft]") || (downloadSelector ? document.querySelector(downloadSelector) : null);
   if (downloadButton) {
     downloadButton.addEventListener("click", () => {
       updateSummary(form);
@@ -300,7 +289,8 @@ function initWorkflowForm(form) {
     });
   }
 
-  const printButton = document.querySelector(form.dataset.printButton || "");
+  const printSelector = form.dataset.printButton;
+  const printButton = form.querySelector("[data-print-page]") || (printSelector ? document.querySelector(printSelector) : null);
   if (printButton) {
     printButton.addEventListener("click", () => {
       updateSummary(form);
@@ -308,7 +298,8 @@ function initWorkflowForm(form) {
     });
   }
 
-  const clearButton = document.querySelector(form.dataset.clearButton || "");
+  const clearSelector = form.dataset.clearButton;
+  const clearButton = clearSelector ? document.querySelector(clearSelector) : null;
   if (clearButton) {
     clearButton.addEventListener("click", () => {
       form.reset();
@@ -317,55 +308,6 @@ function initWorkflowForm(form) {
       updateAgeNotice(form);
     });
   }
-}
-
-function initAccessForms() {
-  document.querySelectorAll("[data-access-form]").forEach((form) => {
-    const role = form.dataset.role;
-    const passwordField = form.querySelector('input[type="password"]');
-    const status = form.querySelector("[data-access-status]");
-    const returnField = form.querySelector('input[name="return_path"]');
-
-    if (!role || !passwordField) {
-      return;
-    }
-
-    const query = new URLSearchParams(window.location.search);
-    if (query.get("role") === role && returnField && !returnField.value && query.get("return")) {
-      returnField.value = query.get("return");
-    }
-
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const expected = window.siteConfig.accessPasswords[role];
-      const entered = passwordField.value;
-
-      if (entered === expected) {
-        sessionStorage.setItem(`roleAccess:${role}`, "granted");
-        const target = returnField?.value || ROLE_ROUTES[role] || "/index.html";
-        window.location.href = withBase(target);
-        return;
-      }
-
-      if (status) {
-        status.textContent = "That password did not match.";
-      }
-    });
-  });
-}
-
-function initRoleGuards() {
-  const role = document.body.dataset.roleGuard;
-  if (!role) {
-    return;
-  }
-
-  if (sessionStorage.getItem(`roleAccess:${role}`) === "granted") {
-    return;
-  }
-
-  const target = encodeURIComponent(window.location.pathname);
-  window.location.href = withBase(`/access/index.html?role=${encodeURIComponent(role)}&return=${target}`);
 }
 
 async function initSubmissionDashboard() {
@@ -379,10 +321,10 @@ async function initSubmissionDashboard() {
 
   if (!window.siteConfig.responseSheetCsvUrl) {
     if (status) {
-      status.textContent = "No shared response table is configured yet. Form submissions still go to the organizer email inbox.";
+      status.textContent = "No shared response table is configured in this public repo. The canonical path is organizer-owned Google Forms connected to Google Sheets.";
     }
     if (tableTarget) {
-      tableTarget.innerHTML = "<p class=\"small\">To show a live response table here, publish a Google Sheet as CSV and place the CSV URL in assets/js/site-config.js.</p>";
+      tableTarget.innerHTML = "<p class=\"small\">If the organizer later wants a live response dashboard, publish a Google Sheet as CSV and place the CSV URL in assets/js/site-config.js. This remains optional and separate from the public GitHub Pages site.</p>";
     }
     return;
   }
@@ -426,21 +368,19 @@ async function initSubmissionDashboard() {
     }
 
     if (status) {
-      status.textContent = `${bodyRows.length} submission record${bodyRows.length === 1 ? "" : "s"} loaded from the shared response table.`;
+      status.textContent = `${bodyRows.length} submission record${bodyRows.length === 1 ? "" : "s"} loaded from the shared Google Sheets response table.`;
     }
   } catch (error) {
     if (status) {
-      status.textContent = `The shared response table could not be loaded yet (${error.message}). Form submissions still go to the organizer inbox.`;
+      status.textContent = `The shared response table could not be loaded yet (${error.message}). Keep using the organizer-owned Google Form and response sheet outside the public repo.`;
     }
     if (tableTarget) {
-      tableTarget.innerHTML = "<p class=\"small\">Check the published CSV URL in assets/js/site-config.js or keep using the organizer email inbox until the sheet is ready.</p>";
+      tableTarget.innerHTML = "<p class=\"small\">Check the published CSV URL in assets/js/site-config.js or keep using the organizer-owned Google Form and Google Sheet until the optional dashboard is ready.</p>";
     }
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  initRoleGuards();
-
   const nav = document.querySelector("[data-nav]");
   const toggle = document.querySelector("[data-menu-toggle]");
   if (nav && toggle) {
@@ -464,17 +404,8 @@ document.addEventListener("DOMContentLoaded", () => {
     node.textContent = new Date().getFullYear();
   });
 
-  document.querySelectorAll("[data-form-endpoint]").forEach((form) => {
-    if (window.siteConfig.formEndpoint) {
-      form.setAttribute("action", window.siteConfig.formEndpoint);
-      form.setAttribute("method", "post");
-    }
-  });
-
   document.querySelectorAll("[data-form-status]").forEach((status) => {
-    status.textContent = window.siteConfig.formEndpoint
-      ? `This form is configured to submit through ${window.siteConfig.formServiceName}, so the organizer receives a copy and can keep a response list.`
-      : "No live submission inbox is configured yet. Save a draft locally, print or save as PDF, or download the entered details for manual collection.";
+    status.textContent = "This workbook is local to this browser. Save a draft locally, download the entered details, or print / save as PDF. Structured pre-event and feedback collection belong in organizer-issued Google Forms, not GitHub Pages.";
   });
 
   document.querySelectorAll("[data-contact-label]").forEach((node) => {
@@ -529,7 +460,6 @@ document.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", () => window.print());
   });
 
-  initAccessForms();
   initSubmissionDashboard();
 });
 

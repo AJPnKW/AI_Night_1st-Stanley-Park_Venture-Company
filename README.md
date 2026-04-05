@@ -19,6 +19,8 @@
 
 This repository powers a calm, low-friction introduction to AI and ChatGPT for Scouts and Venturers. The active public experience is browser-first, with guided prompt practice, exercises, reflections, and role-based support pages for participants, families, leaders, and facilitators.
 
+GitHub Pages is the canonical public front end. Interactive workbook behavior runs client-side in the browser, while structured pre-event and feedback collection are designed around organizer-issued Google Forms.
+
 ## Quick Start
 
 | Start here | Destination |
@@ -64,6 +66,7 @@ The public site is the main front door:
 - Role-specific public pages for youth, parents, leaders, and facilitators
 - Exercises, reflections, and printable takeaways
 - Knowledge and reference content to support safer, more confident use
+- GitHub Pages for the public front end plus Google Forms for structured survey collection
 
 ## What Participants, Parents, and Leaders Should Do
 
@@ -109,6 +112,7 @@ The public site is the main front door:
 - Exercises and reflection workbook are present
 - Knowledge base and reference pages are present
 - Packaging, archive rationalization, and validation are present
+- Google Forms is the canonical survey strategy, but organizer-owned live form URLs are intentionally managed outside the public repo
 
 Useful repo-side references:
 
@@ -117,6 +121,8 @@ Useful repo-side references:
 - [Parent information pack](AI_Workshop_4_ventures/docs/parent_information_pack.html)
 - [Presenter operations pack](AI_Workshop_4_ventures/docs/presenter_operations_pack.html)
 - [Backup facilitator pack](AI_Workshop_4_ventures/docs/backup_facilitator_pack.html)
+- [Platform capabilities and limits](AI_Workshop_4_ventures/docs/platform_capabilities_and_limits.html)
+- [Forms and backend supplement plan](AI_Workshop_4_ventures/docs/forms_and_backend_supplement_plan.html)
 
 ## Important Notes
 
@@ -125,3 +131,4 @@ Useful repo-side references:
 - Internal or protected areas may exist operationally; passwords or access credentials are not published here.
 - The live public destination is GitHub Pages. The working source is `AI_Workshop_4_ventures/web/`, and the deploy mirror is `github/`.
 - Where a freshly generated detail page is not yet visible on GitHub Pages, this README links to the canonical repo-side publish mirror rather than a broken live route.
+- Workbook notes stay local to the participant browser by default. Structured surveys and feedback use organizer-issued Google Forms outside the public site.

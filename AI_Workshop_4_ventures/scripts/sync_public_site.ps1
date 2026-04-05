@@ -30,4 +30,24 @@ if (-not (Test-Path $noJekyll)) {
   "" | Set-Content -Path $noJekyll -Encoding UTF8
   Write-Log "Created .nojekyll"
 }
+
+$requiredMirrorFiles = @(
+  "index.html",
+  "participant\index.html",
+  "participant\exercises.html",
+  "participant\reflections.html",
+  "parent\index.html",
+  "leader\index.html",
+  "facilitator\run-of-show.html",
+  "kb\index.html"
+)
+
+foreach ($relativePath in $requiredMirrorFiles) {
+  $target = Join-Path $PublishMirror $relativePath
+  if (-not (Test-Path $target)) {
+    throw "Publish mirror is missing required file: $relativePath"
+  }
+  Write-Log "Verified publish mirror file: $relativePath"
+}
+
 Write-Log "Sync completed"

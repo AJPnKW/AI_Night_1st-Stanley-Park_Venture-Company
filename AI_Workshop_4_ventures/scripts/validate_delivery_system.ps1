@@ -63,7 +63,10 @@ $requiredDocs = @(
   "docs\youth_participant_pack.html",
   "docs\leader_support_pack.html",
   "docs\kb_index.html",
-  "docs\kb_article_template.html"
+  "docs\kb_article_template.html",
+  "docs\platform_capabilities_and_limits.html",
+  "docs\forms_and_backend_supplement_plan.html",
+  "docs\optional_submission_and_email_workflow.html"
 )
 
 $requiredPages = @(
@@ -81,6 +84,7 @@ $requiredPages = @(
   "web\shared\faq.html",
   "web\shared\resources.html",
   "web\shared\examples.html",
+  "web\shared\forms-feedback.html",
   "web\access\index.html",
   "web\kb\index.html",
   "web\kb\what-is-chatgpt.html",
@@ -108,6 +112,7 @@ $contentChecks = @(
   @{ path = "web\facilitator\run-of-show.html"; pattern = "Closing remarks"; message = "Facilitator page is missing the closing remarks." },
   @{ path = "web\shared\examples.html"; pattern = "Weak vs strong demo cards"; message = "Examples page is missing the demo cards heading." },
   @{ path = "web\shared\resources.html"; pattern = "Demo prompt bank"; message = "Resources page is missing the demo prompt bank." },
+  @{ path = "web\shared\forms-feedback.html"; pattern = "Google Forms"; message = "Forms and feedback page is missing the canonical forms platform wording." },
   @{ path = "web\kb\index.html"; pattern = "Knowledge and reference articles"; message = "KB index is missing the knowledge index heading." },
   @{ path = "docs\presenter_operations_pack.html"; pattern = "Keep the Codex demo short and clearly secondary"; message = "Presenter operations pack is missing the browser-first presenter reminder." },
   @{ path = "docs\backup_facilitator_pack.html"; pattern = "10-minute rescue plan"; message = "Backup facilitator pack is missing the rescue plan." },
@@ -116,7 +121,10 @@ $contentChecks = @(
   @{ path = "docs\pre_event_parent_message.html"; pattern = "No VM is required by default"; message = "Parent pre-event message is missing the no-VM-by-default wording." },
   @{ path = "docs\pre_event_participant_message.html"; pattern = "No VM is required by default"; message = "Participant pre-event message is missing the no-VM-by-default wording." },
   @{ path = "docs\pre_event_survey_and_feedback_plan.html"; pattern = "How survey responses affect planning"; message = "Survey plan is missing the planning-use section." },
-  @{ path = "docs\exercise_cards_guided_build_remix_stretch.html"; pattern = "Weak starter prompt"; message = "Exercise card pack is missing the card prompt structure." }
+  @{ path = "docs\exercise_cards_guided_build_remix_stretch.html"; pattern = "Weak starter prompt"; message = "Exercise card pack is missing the card prompt structure." },
+  @{ path = "docs\platform_capabilities_and_limits.html"; pattern = "What GitHub Pages can do"; message = "Platform capabilities doc is missing the GitHub Pages capabilities section." },
+  @{ path = "docs\forms_and_backend_supplement_plan.html"; pattern = "Google Forms"; message = "Forms plan is missing the canonical Google Forms wording." },
+  @{ path = "docs\optional_submission_and_email_workflow.html"; pattern = "Google Apps Script"; message = "Optional submission workflow doc is missing the Apps Script path." }
 )
 
 $placeholderPatterns = @(
@@ -169,6 +177,44 @@ foreach ($file in $htmlFiles) {
     if ($raw -match "(?i)\b$([regex]::Escape($pattern))\b") {
       $issues.Add("Placeholder language found in $($file.FullName): $pattern")
     }
+  }
+}
+
+$siteJsPath = Join-Path $ProjectRoot "web\assets\js\site.js"
+if (Test-Path $siteJsPath) {
+  $siteJs = Get-Content $siteJsPath -Raw
+  if ($siteJs -match "accessPasswords") {
+    $issues.Add("Public client script still exposes access password logic.")
+  }
+  if ($siteJs -match "FormSubmit|formsubmit") {
+    $issues.Add("Public client script still references FormSubmit instead of the locked Forms-based strategy.")
+  }
+}
+
+$siteConfigPath = Join-Path $ProjectRoot "web\assets\js\site-config.js"
+if (Test-Path $siteConfigPath) {
+  $siteConfig = Get-Content $siteConfigPath -Raw
+  if ($siteConfig -match "FormSubmit|formsubmit") {
+    $issues.Add("Public site config still references FormSubmit.")
+  }
+}
+
+$repoRoot = Split-Path $ProjectRoot -Parent
+$readmePath = Join-Path $repoRoot "README.md"
+if (Test-Path $readmePath) {
+  $readme = Get-Content $readmePath -Raw
+  if ($readme -match "blob/main|blob/") {
+    $issues.Add("README still contains stale GitHub blob links.")
+  }
+  if ($readme -notmatch "browser-first") {
+    $issues.Add("README is missing browser-first wording.")
+  }
+}
+
+$publishMirrorRoot = Join-Path $repoRoot "github"
+foreach ($mirrorPath in @("index.html", "participant\exercises.html", "participant\reflections.html", "kb\index.html")) {
+  if (-not (Test-Path (Join-Path $publishMirrorRoot $mirrorPath))) {
+    $issues.Add("Publish mirror missing required route: github\$mirrorPath")
   }
 }
 
