@@ -35,6 +35,7 @@ Browser-first is the canonical participant model. Public content is designed for
 | Reflection workbook | [Reflections](https://ajpnkw.github.io/AI_Night_1st-Stanley-Park_Venture-Company/participant/reflections.html) |
 | Knowledge base | [Knowledge base](https://ajpnkw.github.io/AI_Night_1st-Stanley-Park_Venture-Company/kb/index.html) |
 | Project dashboard | [Project overview](https://ajpnkw.github.io/AI_Night_1st-Stanley-Park_Venture-Company/project/index.html) |
+| Executive summary | [Portfolio summary](https://ajpnkw.github.io/AI_Night_1st-Stanley-Park_Venture-Company/project/executive-summary.html) |
 
 ## What This Project Supports
 
@@ -73,6 +74,7 @@ Browser-first is the canonical participant model. Public content is designed for
 | Leader | [Leader guide](https://ajpnkw.github.io/AI_Night_1st-Stanley-Park_Venture-Company/leader/index.html) | Support role, logistics, fallback handling, escalation cues |
 | Facilitator | [Facilitator run-of-show](https://ajpnkw.github.io/AI_Night_1st-Stanley-Park_Venture-Company/facilitator/run-of-show.html) | Live sequence, demo prompts, recovery notes |
 | Portfolio or operator view | [Project case study](https://ajpnkw.github.io/AI_Night_1st-Stanley-Park_Venture-Company/project/case-study.html) | Right-sized methodology, phases, controls, and evidence |
+| Interview prep | [Interview guide](https://ajpnkw.github.io/AI_Night_1st-Stanley-Park_Venture-Company/project/interview-guide.html) | Short talk track and strong supporting artifacts |
 
 ## Project Management Thread
 
@@ -81,9 +83,11 @@ This repo can be presented as a project-light delivery case study rather than on
 | Artifact | Purpose |
 | --- | --- |
 | [Project case study](https://ajpnkw.github.io/AI_Night_1st-Stanley-Park_Venture-Company/project/case-study.html) | Portfolio summary and interview framing |
+| [Executive portfolio summary](https://ajpnkw.github.io/AI_Night_1st-Stanley-Park_Venture-Company/project/executive-summary.html) | One-page high-level summary for hiring managers |
 | [Project right-sizing](https://ajpnkw.github.io/AI_Night_1st-Stanley-Park_Venture-Company/project/right-sizing.html) | Why a light methodology was appropriate |
 | [Project phases and status](https://ajpnkw.github.io/AI_Night_1st-Stanley-Park_Venture-Company/project/status.html) | Phases, success measures, and current status |
 | [Participant workbook solution](https://ajpnkw.github.io/AI_Night_1st-Stanley-Park_Venture-Company/project/workbook-solution.html) | Recommended LMS-like participant workflow without building a full LMS |
+| [Interview guide](https://ajpnkw.github.io/AI_Night_1st-Stanley-Park_Venture-Company/project/interview-guide.html) | 60-second and 2-minute talk tracks |
 | [Codex PM backfill prompt](https://ajpnkw.github.io/AI_Night_1st-Stanley-Park_Venture-Company/project/codex-prompt.html) | Reusable prompt for another Codex thread |
 
 ## What This Repo Contains

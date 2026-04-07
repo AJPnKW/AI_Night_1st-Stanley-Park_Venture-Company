@@ -73,7 +73,9 @@ $requiredDocs = @(
   "docs\project_decision_risk_issue_change_log.html",
   "docs\project_management_case_study.html",
   "docs\participant_workbook_and_forms_solution.html",
-  "docs\codex_prompt_project_management_backfill_template.html"
+  "docs\codex_prompt_project_management_backfill_template.html",
+  "docs\project_executive_portfolio_summary.html",
+  "docs\project_interview_talking_points.html"
 )
 
 $requiredPages = @(
@@ -94,6 +96,8 @@ $requiredPages = @(
   "web\shared\forms-feedback.html",
   "web\project\index.html",
   "web\project\case-study.html",
+  "web\project\executive-summary.html",
+  "web\project\interview-guide.html",
   "web\project\right-sizing.html",
   "web\project\status.html",
   "web\project\workbook-solution.html",
@@ -127,6 +131,8 @@ $contentChecks = @(
   @{ path = "web\shared\resources.html"; pattern = "Demo prompt bank"; message = "Resources page is missing the demo prompt bank." },
   @{ path = "web\shared\forms-feedback.html"; pattern = "Google Forms"; message = "Forms and feedback page is missing the canonical forms platform wording." },
   @{ path = "web\project\index.html"; pattern = "project-light"; message = "Project overview page is missing the project-light positioning." },
+  @{ path = "web\project\executive-summary.html"; pattern = "Project in one paragraph"; message = "Project executive summary page is missing the summary block." },
+  @{ path = "web\project\interview-guide.html"; pattern = "60-second version"; message = "Project interview guide page is missing the short talk track." },
   @{ path = "web\project\case-study.html"; pattern = "Recommended interview framing"; message = "Project case study page is missing the interview framing section." },
   @{ path = "web\project\workbook-solution.html"; pattern = "Google Forms with section branching"; message = "Public workbook solution page is missing the Forms branching guidance." },
   @{ path = "web\project\codex-prompt.html"; pattern = "project-light PM support"; message = "Public Codex prompt page is missing the PM backfill prompt content." },
@@ -148,7 +154,9 @@ $contentChecks = @(
   @{ path = "docs\project_decision_risk_issue_change_log.html"; pattern = "Key decisions"; message = "Project decision/risk log is missing the decision section." },
   @{ path = "docs\project_management_case_study.html"; pattern = "Recommended interview framing"; message = "Project management case study is missing the interview framing section." },
   @{ path = "docs\participant_workbook_and_forms_solution.html"; pattern = "Recommended tool pattern"; message = "Participant workbook/forms solution doc is missing the tool-pattern section." },
-  @{ path = "docs\codex_prompt_project_management_backfill_template.html"; pattern = "Prompt text"; message = "Codex PM backfill prompt doc is missing the prompt block." }
+  @{ path = "docs\codex_prompt_project_management_backfill_template.html"; pattern = "Prompt text"; message = "Codex PM backfill prompt doc is missing the prompt block." },
+  @{ path = "docs\project_executive_portfolio_summary.html"; pattern = "Project in one paragraph"; message = "Project executive portfolio summary is missing the summary section." },
+  @{ path = "docs\project_interview_talking_points.html"; pattern = "60-second version"; message = "Project interview talking points doc is missing the short talk track." }
 )
 
 $placeholderPatterns = @(
