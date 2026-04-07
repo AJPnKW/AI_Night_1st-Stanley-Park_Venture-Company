@@ -66,7 +66,14 @@ $requiredDocs = @(
   "docs\kb_article_template.html",
   "docs\platform_capabilities_and_limits.html",
   "docs\forms_and_backend_supplement_plan.html",
-  "docs\optional_submission_and_email_workflow.html"
+  "docs\optional_submission_and_email_workflow.html",
+  "docs\project_right_sizing_approach.html",
+  "docs\project_charter_and_success_measures.html",
+  "docs\project_phase_delivery_thread.html",
+  "docs\project_decision_risk_issue_change_log.html",
+  "docs\project_management_case_study.html",
+  "docs\participant_workbook_and_forms_solution.html",
+  "docs\codex_prompt_project_management_backfill_template.html"
 )
 
 $requiredPages = @(
@@ -124,7 +131,14 @@ $contentChecks = @(
   @{ path = "docs\exercise_cards_guided_build_remix_stretch.html"; pattern = "Weak starter prompt"; message = "Exercise card pack is missing the card prompt structure." },
   @{ path = "docs\platform_capabilities_and_limits.html"; pattern = "What GitHub Pages can do"; message = "Platform capabilities doc is missing the GitHub Pages capabilities section." },
   @{ path = "docs\forms_and_backend_supplement_plan.html"; pattern = "Google Forms"; message = "Forms plan is missing the canonical Google Forms wording." },
-  @{ path = "docs\optional_submission_and_email_workflow.html"; pattern = "Google Apps Script"; message = "Optional submission workflow doc is missing the Apps Script path." }
+  @{ path = "docs\optional_submission_and_email_workflow.html"; pattern = "Google Apps Script"; message = "Optional submission workflow doc is missing the Apps Script path." },
+  @{ path = "docs\project_right_sizing_approach.html"; pattern = "right-sized"; message = "Project right-sizing doc is missing the right-sized methodology wording." },
+  @{ path = "docs\project_charter_and_success_measures.html"; pattern = "Success measures"; message = "Project charter doc is missing the success measures section." },
+  @{ path = "docs\project_phase_delivery_thread.html"; pattern = "Delivery thread summary"; message = "Project phase delivery thread is missing the delivery summary." },
+  @{ path = "docs\project_decision_risk_issue_change_log.html"; pattern = "Key decisions"; message = "Project decision/risk log is missing the decision section." },
+  @{ path = "docs\project_management_case_study.html"; pattern = "Recommended interview framing"; message = "Project management case study is missing the interview framing section." },
+  @{ path = "docs\participant_workbook_and_forms_solution.html"; pattern = "Recommended tool pattern"; message = "Participant workbook/forms solution doc is missing the tool-pattern section." },
+  @{ path = "docs\codex_prompt_project_management_backfill_template.html"; pattern = "Prompt text"; message = "Codex PM backfill prompt doc is missing the prompt block." }
 )
 
 $placeholderPatterns = @(
