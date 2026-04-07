@@ -101,6 +101,221 @@ function parseCsv(text) {
   return rows;
 }
 
+const workbookMatrix = {
+  "Prompt improvement": {
+    Guided: {
+      starter: "Help me learn history.",
+      tip: "Add the topic, who it is for, and the format you want back.",
+      followup: "If the answer is still weak, add one limit such as length, reading level, or bullet points.",
+      extension: "Remix the same prompt for a different subject or a different audience."
+    },
+    Build: {
+      starter: "Help me get ready for camp.",
+      tip: "Say what kind of help you want: checklist, schedule, explanation, or message.",
+      followup: "Compare your first improved prompt with a second version that adds a real-world limit.",
+      extension: "Turn the answer into a checklist and a short message version."
+    },
+    Remix: {
+      starter: "Tell me about Vancouver.",
+      tip: "Ask for a purpose, like planning a visit, learning history, or finding family-friendly ideas.",
+      followup: "Adapt the same prompt for a younger learner, a tourist, or a parent.",
+      extension: "Create two versions with different tones and compare which one is more useful."
+    },
+    Stretch: {
+      starter: "Help me plan a project.",
+      tip: "Break the project into steps, success criteria, and a simple timeline.",
+      followup: "Ask the tool to critique its own first answer and then improve it.",
+      extension: "Create a version for a teacher and a version for a friend, then compare the changes."
+    }
+  },
+  "Summarize and refine": {
+    Guided: {
+      starter: "Summarize this article.",
+      tip: "Say how short the summary should be and what should stay in plain language.",
+      followup: "If the summary is vague, ask for fewer points with clearer wording.",
+      extension: "Turn the summary into study notes or a short checklist."
+    },
+    Build: {
+      starter: "Summarize this and make it better.",
+      tip: "Name the audience and ask what 'better' means, such as clearer, shorter, or more organized.",
+      followup: "Ask for the same content in a different format like bullets, Q&A, or flashcards.",
+      extension: "Create a summary and a one-minute speaking version."
+    },
+    Remix: {
+      starter: "Explain this video.",
+      tip: "Ask for a plain-language explanation and one example or analogy.",
+      followup: "Change the audience and see what explanation changes.",
+      extension: "Ask for both a beginner explanation and a more detailed version."
+    },
+    Stretch: {
+      starter: "Turn this into study notes.",
+      tip: "Ask for sections, key terms, and a small self-check at the end.",
+      followup: "If the notes feel too long, ask the model to rank what matters most.",
+      extension: "Build a quiz from the notes and test whether the notes were actually useful."
+    }
+  },
+  "Tone and audience rewrite": {
+    Guided: {
+      starter: "Rewrite this message.",
+      tip: "Say who it is for and what tone you want, like polite, friendly, or clear.",
+      followup: "If the rewrite still sounds off, add a word limit and ask what to remove.",
+      extension: "Write a teacher version and a friend version and compare them."
+    },
+    Build: {
+      starter: "Make this sound better.",
+      tip: "Replace 'better' with a real goal such as calmer, shorter, more respectful, or more direct.",
+      followup: "Ask for two options and pick which one best matches your purpose.",
+      extension: "Turn the message into both an email and a short text reminder."
+    },
+    Remix: {
+      starter: "Rewrite this camp announcement.",
+      tip: "Name the readers and say what action you want them to take.",
+      followup: "If the call to action is weak, ask for a stronger closing line.",
+      extension: "Adapt it for a parent, a youth participant, and a leader."
+    },
+    Stretch: {
+      starter: "Turn this into a short speech.",
+      tip: "Ask for a speaking tone, a clear opening, and a closing line.",
+      followup: "If it feels stiff, ask for more natural spoken wording.",
+      extension: "Ask for two versions: one formal and one more energetic."
+    }
+  },
+  "Image prompt design": {
+    Guided: {
+      starter: "Make a poster for camp.",
+      tip: "Start with subject, then add mood, colours, and layout.",
+      followup: "If the image feels random, add a style word and one composition detail.",
+      extension: "Make a second version for a different time of day."
+    },
+    Build: {
+      starter: "Make a cool logo.",
+      tip: "Name the shape, symbols, colour style, and whether it should feel modern or playful.",
+      followup: "If the logo is too busy, ask for a simpler badge version.",
+      extension: "Create a matching sticker version and compare them."
+    },
+    Remix: {
+      starter: "Create an event image.",
+      tip: "Say what event it is for and what feeling the image should create.",
+      followup: "Change one thing at a time: audience, colour palette, or style.",
+      extension: "Remix it for poster, sticker, and social tile formats."
+    },
+    Stretch: {
+      starter: "Create a set of matching images.",
+      tip: "Ask for a consistent style guide across the set.",
+      followup: "If the images do not match, repeat the style, colours, and layout rules in each prompt.",
+      extension: "Create a mini visual system with a poster, badge, and banner."
+    }
+  },
+  "Reflection on AI output quality": {
+    Guided: {
+      starter: "Which answer is better?",
+      tip: "Do not stop at 'better' or 'worse'. Name what made one output more useful.",
+      followup: "If you are unsure, compare the outputs against one goal or audience.",
+      extension: "Write one sentence explaining which answer you would trust less and why."
+    },
+    Build: {
+      starter: "Compare these two outputs.",
+      tip: "Look for clarity, fit for purpose, and whether anything sounds too confident.",
+      followup: "Name one thing the better output still got wrong or missed.",
+      extension: "Rank the outputs on usefulness, clarity, and trust."
+    },
+    Remix: {
+      starter: "Why is this not quite right?",
+      tip: "Describe the gap: missing detail, wrong tone, weak structure, or shaky facts.",
+      followup: "Turn the gap into one better follow-up prompt.",
+      extension: "Compare how the same answer would land for two different audiences."
+    },
+    Stretch: {
+      starter: "What would you verify before trusting this output?",
+      tip: "List the facts, dates, names, or claims that need checking.",
+      followup: "Ask the model to show uncertainty or list questions instead of pretending certainty.",
+      extension: "Create a small checklist for safe AI use after the event."
+    }
+  },
+  "Optional Codex observation task": {
+    Guided: {
+      starter: "Watch the facilitator demo and name one useful constraint.",
+      tip: "Look for what was requested, how big it should be, and what had to be included.",
+      followup: "Explain how the same lesson applies to a browser prompt.",
+      extension: "Write one prompt rule you want to remember."
+    },
+    Build: {
+      starter: "Explain what Codex is and is not.",
+      tip: "Keep the focus on prompt clarity, not on coding status.",
+      followup: "Name one risk of a vague coding request and one benefit of a clear one.",
+      extension: "Rewrite the weak coding request to make it easier to review."
+    },
+    Remix: {
+      starter: "Adapt the coding demo lesson back into a browser-only prompt lesson.",
+      tip: "Map code constraints to normal prompt constraints like audience, format, and limits.",
+      followup: "Name one thing that stayed the same across both tools.",
+      extension: "Create a short 'same lesson, different tool' comparison."
+    },
+    Stretch: {
+      starter: "Explain why the coding demo is optional and secondary.",
+      tip: "Connect the answer back to the browser-first goal of the event.",
+      followup: "Name why over-focusing on advanced tools would derail the main workshop.",
+      extension: "Write a short leader note about when not to introduce advanced tools."
+    }
+  }
+};
+
+function getWorkbookState(form) {
+  const category = form.querySelector("[name='category']")?.value || "Prompt improvement";
+  const level = form.querySelector("[name='level']")?.value || "Guided";
+  const result = form.querySelector("[name='result']")?.value || "";
+  const quality = form.querySelector("[name='output_quality']")?.value || "";
+  return { category, level, result, quality };
+}
+
+function updateWorkbookAssistant(form) {
+  if (form.dataset.workbookAssistant !== "true") {
+    return;
+  }
+
+  const helper = form.querySelector("[data-workbook-helper]");
+  if (!helper) {
+    return;
+  }
+
+  const { category, level, result, quality } = getWorkbookState(form);
+  const categoryMap = workbookMatrix[category] || workbookMatrix["Prompt improvement"];
+  const content = categoryMap[level] || categoryMap.Guided;
+
+  const starterNode = helper.querySelector("[data-helper-starter]");
+  const tipNode = helper.querySelector("[data-helper-tip]");
+  const followupNode = helper.querySelector("[data-helper-followup]");
+  const extensionNode = helper.querySelector("[data-helper-extension]");
+
+  if (starterNode) {
+    starterNode.textContent = content.starter;
+  }
+  if (tipNode) {
+    tipNode.textContent = content.tip;
+  }
+
+  let followup = content.followup;
+  if (result === "Not yet" || quality === "Still weak") {
+    followup = `${content.followup} Narrow the ask and add one concrete detail before trying again.`;
+  } else if (result === "Partly" || quality === "Getting closer") {
+    followup = `${content.followup} Keep the good parts and improve one gap at a time.`;
+  } else if (result === "Yes, mostly" || quality === "Useful already") {
+    followup = "You have something workable. Now improve tone, format, or audience fit rather than starting over.";
+  }
+
+  if (followupNode) {
+    followupNode.textContent = followup;
+  }
+  if (extensionNode) {
+    extensionNode.textContent = content.extension;
+  }
+
+  const starterField = form.querySelector("[name='starter']");
+  if (starterField && !starterField.value.trim()) {
+    starterField.value = content.starter;
+  }
+}
+
 function updateSummary(form) {
   const target = document.querySelector(form.dataset.summaryTarget || "");
   if (!target) {
@@ -243,17 +458,20 @@ function updateAgeNotice(form) {
 
 function initWorkflowForm(form) {
   loadDraft(form);
+  updateWorkbookAssistant(form);
   updateSummary(form);
   updateAgeNotice(form);
 
   form.addEventListener("input", () => {
     saveDraft(form);
+    updateWorkbookAssistant(form);
     updateSummary(form);
     updateAgeNotice(form);
   });
 
   form.addEventListener("change", () => {
     saveDraft(form);
+    updateWorkbookAssistant(form);
     updateSummary(form);
     updateAgeNotice(form);
   });
@@ -304,6 +522,7 @@ function initWorkflowForm(form) {
     clearButton.addEventListener("click", () => {
       form.reset();
       saveDraft(form);
+      updateWorkbookAssistant(form);
       updateSummary(form);
       updateAgeNotice(form);
     });
