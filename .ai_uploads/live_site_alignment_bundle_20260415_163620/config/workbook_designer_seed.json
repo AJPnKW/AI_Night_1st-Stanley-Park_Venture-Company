@@ -1,0 +1,199 @@
+{
+  "schema_version": "1.0",
+  "designer_version": "0.2.0",
+  "session": {
+    "title": "Jenn's Ventures AI Night",
+    "subtitle": "Master aligned session model",
+    "duration_minutes": 90,
+    "audience": "Venturers ages 13-18",
+    "facilitator_mode": "browser_first",
+    "notes": "Pre-populated from the live-site alignment pass. Restores the missing concept-first AI and ChatGPT teaching layer, then carries the participant workbook, pathways, image activity, reflection, and safe-use close."
+  },
+  "defaults": {
+    "pathways": [
+      "guided",
+      "build",
+      "remix",
+      "stretch"
+    ],
+    "result_ratings": [
+      "yes mostly",
+      "partly",
+      "not yet"
+    ],
+    "categories": [
+      "planning",
+      "writing",
+      "school",
+      "creative",
+      "useful life task"
+    ]
+  },
+  "steps": [
+    {
+      "id": "arrival_01",
+      "type": "intro",
+      "title": "Arrival, reassurance, and opening question",
+      "minutes": 10,
+      "pathway": "all",
+      "goal": "Reduce pressure, set tone, connect the night to a real learner need.",
+      "learner_prompt": "Write one thing you hope AI could help you do better by the end of tonight.",
+      "reflection_question": "Why did you choose that need?",
+      "facilitator_notes": "Keep this calm. Make it clear that the night is about guided learning, not being perfect."
+    },
+    {
+      "id": "foundations_01",
+      "type": "demo",
+      "title": "Foundations: what AI is, what ChatGPT is, and what it is not",
+      "minutes": 10,
+      "pathway": "all",
+      "goal": "Introduce AI, ChatGPT, usefulness, limits, and why output still needs checking.",
+      "learner_prompt": "Listen for one thing AI can do well and one thing it can get wrong.",
+      "reflection_question": "What surprised you about what AI is or is not?",
+      "facilitator_notes": "Cover AI, ChatGPT, prompt, hallucination, bias, drift, and verification in plain language."
+    },
+    {
+      "id": "demo_01",
+      "type": "demo",
+      "title": "Weak prompt versus stronger prompt",
+      "minutes": 8,
+      "pathway": "all",
+      "goal": "Show that prompt quality changes usefulness.",
+      "starter_prompt": "Plan my weekend.",
+      "improved_prompt": "Plan a low-cost Saturday for a teen in Kitchener-Waterloo with one outdoor idea, one indoor backup, and a timeline from noon to 6 PM.",
+      "reflection_question": "What changed because the prompt became more specific?",
+      "facilitator_notes": "Teach audience, format, and limits here."
+    },
+    {
+      "id": "workbook_start_01",
+      "type": "exercise",
+      "title": "Workbook start and setup",
+      "minutes": 4,
+      "pathway": "all",
+      "goal": "Move learners into the workbook after the concept intro and first demo.",
+      "learner_prompt": "Choose your topic, your level, and what you expect the tool to help you do."
+    },
+    {
+      "id": "exercise_01",
+      "type": "exercise",
+      "title": "Guided text prompt practice",
+      "minutes": 12,
+      "pathway": "all",
+      "goal": "Give every learner one successful prompt-improvement loop early in the session.",
+      "activity_cards": [
+        {
+          "card_id": "plan_01",
+          "category": "planning",
+          "weak_prompt": "Plan something fun for this weekend.",
+          "better_prompt_hint": "Add audience, place, budget, time, and output format."
+        },
+        {
+          "card_id": "study_01",
+          "category": "school",
+          "weak_prompt": "Help me study science.",
+          "better_prompt_hint": "Add topic, age, format, and what would make the answer useful."
+        },
+        {
+          "card_id": "message_01",
+          "category": "writing",
+          "weak_prompt": "Rewrite this message.",
+          "better_prompt_hint": "Add audience, tone, length, and what needs to be clear."
+        }
+      ],
+      "learner_prompt": "Improve one weak prompt. Save the better version. Note what changed in the output.",
+      "reflection_question": "What did you expect the improved prompt to return, and what did it actually return?"
+    },
+    {
+      "id": "break_01",
+      "type": "demo_pause",
+      "title": "Break and regroup",
+      "minutes": 5,
+      "pathway": "all",
+      "goal": "Reset the room and pace.",
+      "facilitator_notes": "Protect the break. Do not let the room run hot for the full 90 minutes."
+    },
+    {
+      "id": "image_demo_01",
+      "type": "demo",
+      "title": "Image prompt demo",
+      "minutes": 8,
+      "pathway": "all",
+      "goal": "Show that image prompts improve with audience, purpose, layout, and style.",
+      "starter_prompt": "Make a camp poster.",
+      "improved_prompt": "Create a friendly poster for a youth AI night at camp. Use a clean layout, bold heading, warm evening colours, and space for date, time, and what to bring.",
+      "reflection_question": "What details helped most in the better image prompt?"
+    },
+    {
+      "id": "image_activity_01",
+      "type": "exercise",
+      "title": "Guided image activity",
+      "minutes": 10,
+      "pathway": "all",
+      "goal": "Give learners one supported image-generation task without overload.",
+      "learner_prompt": "Create one image prompt with purpose, audience, style, and layout clearly stated."
+    },
+    {
+      "id": "advanced_demo_01",
+      "type": "demo_pause",
+      "title": "Advanced or future-path demo",
+      "minutes": 7,
+      "pathway": "all",
+      "goal": "Show what comes after browser-first use without making it the core of the night.",
+      "facilitator_notes": "Keep this short. Position it as optional future direction."
+    },
+    {
+      "id": "branch_01",
+      "type": "branch",
+      "title": "Choose Guided, Build, Remix, or Stretch",
+      "minutes": 2,
+      "pathway": "all",
+      "goal": "Right-size the final work block to different learner confidence levels.",
+      "branch_rules": [
+        {
+          "if_choice": "guided",
+          "next_focus": "sentence frames and strong examples"
+        },
+        {
+          "if_choice": "build",
+          "next_focus": "practical personal task"
+        },
+        {
+          "if_choice": "remix",
+          "next_focus": "change audience, tone, or format"
+        },
+        {
+          "if_choice": "stretch",
+          "next_focus": "compare multiple outputs and name verification needs"
+        }
+      ]
+    },
+    {
+      "id": "project_01",
+      "type": "independent_project",
+      "title": "Personal mini-project",
+      "minutes": 8,
+      "pathway": "branched",
+      "goal": "Use the prompt-improvement pattern on a personally relevant task.",
+      "learner_prompt": "Create one prompt for a real interest: school, creativity, hobbies, planning, or a useful life task. Save the best version and note one improvement you made."
+    },
+    {
+      "id": "reflection_01",
+      "type": "reflection",
+      "title": "Reflection and summary",
+      "minutes": 7,
+      "pathway": "all",
+      "goal": "Capture learning, remaining gaps, and next-step thinking.",
+      "learner_prompt": "What changed? What still needs checking? What would you do differently next time?",
+      "facilitator_notes": "Do not skip the verification habit."
+    },
+    {
+      "id": "close_01",
+      "type": "close",
+      "title": "Safe-use close and takeaway",
+      "minutes": 3,
+      "pathway": "all",
+      "goal": "End with one useful habit and one realistic next step.",
+      "learner_prompt": "Write one prompt habit you want to keep using after tonight."
+    }
+  ]
+}
